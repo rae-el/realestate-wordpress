@@ -1,0 +1,39 @@
+What I need to do for original theme:
+
+set breakpoints
+	- set smaller font sizes
+	- set smaller image size
+	- change menu under certain screen size
+	* can navigate different devices with @media
+	* need something else for re-sizing browsers
+
+1 tab for commercial website
+1 tab for residential
+want to show all team 3000 listings
+
+Brian White
+IndividualID: 1559757
+
+Team 3000
+OrganizationID: 147734
+
+
+https://rapidapi.com/apidojo/api/realty-in-ca1/
+
+
+follow bccondos style
+https://bccondos.net/
+
+current website
+https://brianwhite.ca/
+
+website host support page
+https://help.myrealpage.com/support/home
+
+website dashboard
+https://private-office.myrealpage.com/wps/rest/-aa799a6b76951e5b49128bd5e622142ecd24c37f-/2316/admin/po/dashboard
+
+
+	<!--<script src="https://kit.fontawesome.com/17aa4105b5.js" crossorigin="anonymous"></script>-->
+	<script src="https://kit.fontawesome.com/17aa4105b5.js" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/getcondensedmenu.js"></script>

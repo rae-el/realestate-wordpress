@@ -1,0 +1,363 @@
+/*this is my main stylesheet*/
+/**************************************************************************************/
+/*media queries*/
+@media only screen and (max-width: 768px){
+	.condensed-menu{
+		display: block;
+		top: 0;
+		left: 0;
+		z-index: 10;
+	}
+	.condensed-menu.active #menuIcon{
+		opacity:0;
+		display: block;
+		top: 0;
+		left: 0;
+		z-index: 10;
+	}
+	.navbar{
+		display:flex;
+	}
+	.nav-menu{
+		position:fixed;
+		top: -200%;
+		gap: 0;
+		flex-direction: column;
+		background-color: #D2CECF;
+		width: 100%;
+		text-align: right;
+		transition: 0.3s;
+	}
+	.nav-item{
+		margin: 1% 0;
+	}
+	.nav-menu.active{
+		top: 0;
+	}
+}
+/*general start*/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+@font-face{
+	font-family: encodeLight;
+	src: url(../font/Encode_Sans_Condensed/EncodeSansCondensed-Light.ttf);
+}
+@font-face{
+	font-family: encodeSemiBold;
+	src: url(../font/Encode_Sans_Condensed/EncodeSansCondensed-SemiBold.ttf);
+}
+header{
+	height:60px;
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+body {
+	font-family: encodeLight;
+	color: #192028;
+	width: full;
+	box-sizing: border-box;
+}
+h1 {
+  font-family: encodeSemiBold;
+  font-size: 60px;
+}
+h2{
+	font-size: 30px;
+}
+h3{
+	font-size:20px;
+}
+a{
+	text-decoration:none;
+}
+ul {
+    list-style-type: none;
+    list-style: none;
+    list-style-image: none;
+}
+li {
+    display: inline;
+}
+form {
+	display: flex;
+	justify-content: center;
+	align-items:center;
+}
+/*general end*/
+
+/**************************************************************************************/
+
+/*header start*/
+.pre-header{
+	padding-top: 0%;
+	padding-left:0%;
+	font-family: encodeLight;
+	clear: both;
+	position: -webkit-sticky;
+	position:sticky;
+	top:0;
+	background-color:#fff;
+	height: 30px;
+}
+.contact-info{
+	font-size:20px;
+	margin-left:0;
+	padding-left:0;
+}
+.contact-info a{
+	color: #192028;
+	font-size:20px;
+	padding-right:2%;
+}
+.contact-info a:hover{
+	color: #000;
+}
+#pre-header-name{
+	font-family:encodeSemiBold;
+	padding-left: 1rem;
+}
+
+/*pre header menu start*/
+.menu-area{
+	background-color: #D2CECF;
+	text-align: right;
+	padding: 0.1rem 1rem 0 0;
+	flex-grow:1;
+	overflow:hidden;
+	clear:both;
+	display:block;
+}
+.menu-area a{
+	text-decoration: none;
+	color: #424242;
+	text-transform: uppercase;
+	font-size:20px;
+	position:relative;
+	padding-left: 2%;
+	transition: 0.7s ease;
+}
+.menu-area a:hover{
+	color: #808080;
+}
+.condensed-menu{
+	display: none;
+	cursor: pointer;
+}
+#menuIcon{
+	display: block;
+	width: 25px;
+	padding:1%;
+	-webkit-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+/*pre header menu end*/
+/*pre header end*/
+
+/**************************************************************************************/
+
+/*footer start*/
+.footer{
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	padding-left:5%;
+	padding-right:5%;
+	color: #192028;
+}
+.contact-section a{
+	position:relative;
+	/*top:-15px;*/
+	padding-top:0%;
+	padding-bottom:0%;
+	color: #192028;
+}
+.social-icons{
+	color: #456CAC;
+	font-size: 30px;
+}
+/*footer end*/
+
+/**************************************************************************************/
+
+/*home start*/
+.main-page-header{
+	background-image: url(../images/matt-wang-unsplash-narrow2.png);
+	background-size:1500px;
+	background-position:center;
+	background-color: #cac6ca;
+	height: 300px;
+	display: flex;
+	justify-content: flex-start;
+	box-shadow: 0 20px 20px -15px #8D8A8E;
+	overflow: hidden;
+	text-shadow: 1px 1px 5px #8D8A8E;
+	clear:both;
+	/*margin-top:25px;*/
+}
+/*head shot*/
+.image-1-area{
+	padding: 0 2% 0 2%;
+	align-self:center;
+}
+.my-image-1{
+	box-shadow: 0 0 2px 1px #8D8A8E;
+}
+/*site visual title*/
+.title-slogan-area{
+	position:relative;
+	top: 2rem;
+}
+.title-area{
+	padding:0;
+}
+.slogan-area{
+	padding:0 0 0 1rem;
+	position:relative;
+}
+/*search area formatting start*/
+/* search bar*/
+.home-search .search-and-click{
+	font-family: encodeLight;
+	font-size: 25px;
+	padding-top:3%;
+}
+.home-search #search-form{
+	justify-content: center;
+}
+.home-search #mls-search {
+	all:unset;
+	border: none;
+	padding:1%;
+	margin: 1%;
+	background-color: #d3d3d3;
+	border-radius:25px;
+	width:50%;
+}
+.home-search #mls-search:focus{
+	border:none;
+	background-color: #cac6ca;
+}
+.home-search ::placeholder{
+}
+/* search button*/
+.home-search #mls-search-btn{
+	all:unset;
+	border: none;
+	padding:0.1%;
+	margin: 0.1%;
+}
+.home-search #search-image{
+
+}
+.home-search .button-area{
+	text-align:center;
+}
+.home-search #btn-two{
+	all:unset;
+	border:none;
+	background-color: #d3d3d3;
+	border-radius:25px;
+	padding:1%;
+	margin: auto;
+	width:40%;
+}
+.home-search #btn-two:hover{
+	background-color: #cac6ca;
+}
+/*search area formatting end*/
+
+/*listings formatting start*/
+/*home - mls*/
+#mls-property-area{
+	width:100%;
+	display: flex;
+	flex-direction:column;
+	justify-content: stretch;
+	align-items:center;
+}
+#mls-property-area .property-box{
+}
+/*listings formatting end*/
+
+/*home end*/
+
+/**************************************************************************************/
+
+/*index start*/
+.page-title{
+	padding-bottom: 2%;
+}
+.page-body{
+	position:relative;
+	padding:1%;
+	display: flex;
+	flex-direction:column;
+	justify-content: center;
+}
+/*search area formatting start*/
+/* search bar*/
+.search-and-click{
+	font-family: encodeLight;
+	font-size: 17px;
+}
+#search-form{
+	justify-content: right;
+}
+#mls-search {
+	all:unset;
+	border: none;
+	padding:1%;
+	margin:0.5%;
+	background-color: #d3d3d3;
+	border-radius:25px;
+	width:20%;
+}
+#mls-search:focus{
+	border:none;
+	background-color: #cac6ca;
+}
+::placeholder{
+}
+/* search button*/
+
+#mls-search-btn{
+	all:unset;
+	border: none;
+	padding:0.1%;
+	margin: 0.1%;
+}
+#search-image{
+}
+.button-area{
+	text-align:right;
+}
+#btn-two{
+	all:unset;
+	border:none;
+	background-color: #d3d3d3;
+	border-radius:25px;
+	padding:1%;
+	margin: auto;
+	width:20%;
+}
+#btn-two:hover{
+	background-color: #cac6ca;
+}
+/*search area formatting end*/
+/*listings formatting start*/
+/*index - multiple properties*/
+.page-body #properties-area{
+	display: inline-grid;
+	gap: 50px;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+/*listings formatting end*/
+/*index end*/
+
+/**************************************************************************************/
+
+
+
