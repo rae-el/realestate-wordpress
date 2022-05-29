@@ -18,9 +18,10 @@
 		<section class="search-and-click">
 			<section class="search-area">
 				<form id="search-form" role="search">
-					<input type="search" id="mls-search" name="mls-search" placeholder="MLS Search">
-					<button id="mls-search-btn" onclick="getapiresponse()">
-						<img class="search-image" src="<?php echo get_stylesheet_directory_uri(); ?>/images/search-icon.png" alt="<?php esc_attr_e( 'Search', 'textdmomain' );?>" width="43.5" height="28.5"/>
+                    <label for="mls-search"></label>
+                    <input type="search" id="mls-search" name="mls-search" placeholder="MLS Search">
+					<button id="mls-search-btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
 					</button>
 				</form>
 			</section>

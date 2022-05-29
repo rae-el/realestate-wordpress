@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+
 <?php get_header(); ?>
 <body <?php body_class(); ?>>
 
@@ -25,14 +24,13 @@
 			<section class="search-area">
 				<form id="search-form" role="search">
 					<input type="search" id="mls-search" name="mls-search" placeholder="MLS Search">
-					<button id="mls-search-btn" onclick="getapiresponse()">
-						<img class="search-image" src="<?php echo get_stylesheet_directory_uri(); ?>/images/search-icon.png" alt="<?php esc_attr_e( 'Search', 'textdmomain' );?>" width="43.5" height="28.5"/>
+					<button id="mls-search-btn" onclick="getproperty()">
+                        <i class="fa-solid fa-magnifying-glass"></i>
 					</button>
 				</form>
 			</section>
 		</section>
 	</section>
 	<section id="properties-area"></section>
-	<section id="mls-property-area"></section>
 </body>
 <?php get_footer(); ?>

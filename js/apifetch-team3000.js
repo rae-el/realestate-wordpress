@@ -15,24 +15,37 @@ async function getapiresponse(url,options){
 	var data = await response.json();
 	console.log(data);
 	show(data);
+
 }
 
 getapiresponse(url,options);
 
-//photo isn't working and not sure why
 
 function show(data){
 	let tab = "";
 	for (let r of data.Results){
-		tab += `<section class="property-box">
+		try {
+			tab += `<section class="property-box">
+		<img class="property-pic" src="${r.Property.Photo[0].HighResPath}" alt="Property Photo" width="350" height="250">
 		<section class="property-details">
-		<h4 class="property-address">${r.Property.Address.AddressText}</h4>
 		<h4 class="property-address">${r.Property.Address.AddressText}</h4>
 		<h4 class="property-price">${r.Property.Price}</h4>
 		<section class="property-subdetails">
 		<p>Beds: ${r.Building.Bedrooms} Baths: ${r.Building.BathroomTotal} Size: ${r.Land.SizeTotal}</p>
 		</section>
 		</section>`;
-	}	
+		}
+		catch(e){
+			tab += `<section class="property-box">
+		<span class="property-pic"><i class="fa-solid fa-house"></i></span>
+		<section class="property-details">
+		<h4 class="property-address">${r.Property.Address.AddressText}</h4>
+		<h4 class="property-price">${r.Property.Price}</h4>
+		<section class="property-subdetails">
+		<p>Beds: ${r.Building.Bedrooms} Baths: ${r.Building.BathroomTotal} Size: ${r.Land.SizeTotal}</p>
+		</section>
+		</section>`;
+		}
+	}
 	document.getElementById("properties-area").innerHTML = tab;
 }

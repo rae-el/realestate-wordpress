@@ -2,6 +2,7 @@
 /**************************************************************************************/
 /*media queries*/
 @media only screen and (max-width: 768px){
+	/*condensed menu formatting*/
 	.condensed-menu{
 		display: block;
 		top: 0;
@@ -14,6 +15,9 @@
 		top: 0;
 		left: 0;
 		z-index: 10;
+	}
+	#menuIcon{
+		font-size:200px;
 	}
 	.navbar{
 		display:flex;
@@ -33,6 +37,10 @@
 	}
 	.nav-menu.active{
 		top: 0;
+	}
+	/*listings formatting*/
+	.page-body #properties-area{
+		width:100%;
 	}
 }
 /*general start*/
@@ -76,7 +84,6 @@ a{
 ul {
     list-style-type: none;
     list-style-image: none;
-	/*list-style: none;*/
 }
 li {
     display: inline;
@@ -96,8 +103,6 @@ form {
 	padding-left:0;
 	font-family: encodeLight;
 	clear: both;
-	position: -webkit-sticky;
-	position:sticky;
 	top:0;
 	background-color:#fff;
 	height: 30px;
@@ -119,7 +124,6 @@ form {
 	font-family:encodeSemiBold;
 	padding-left: 1rem;
 }
-
 /*pre header menu start*/
 .menu-area{
 	background-color: #D2CECF;
@@ -140,6 +144,9 @@ form {
 	transition: 0.7s ease;
 }
 .menu-area a:hover{
+	color: #808080;
+}
+.menu-area a.active{
 	color: #808080;
 }
 .condensed-menu{
@@ -166,17 +173,23 @@ form {
 	padding-left:5%;
 	padding-right:5%;
 	color: #192028;
+	bottom:0;
+	right:0;
+	left:0;
+	clear: both;
+	position:fixed;
+	overflow:hidden;
+	background-color: #fff;
 }
 .contact-section a{
 	position:relative;
-	/*top:-15px;*/
-	padding-top:0;
-	padding-bottom:0;
+	padding:1%;
 	color: #192028;
 }
-.social-icons{
-	color: #336699;
+.social-icons a{
 	font-size: 30px;
+	padding-right: 1%;
+	color: #3D65AA;
 }
 /*footer end*/
 
@@ -242,34 +255,17 @@ form {
 }
 .home-search ::placeholder{
 }
-/* search button*/
-.home-search #mls-search-btn{
-	all:unset;
-	border: none;
-	padding:0.1%;
-	margin: 0.1%;
-}
-.home-search #search-image{
 
-}
-.home-search .button-area{
-	text-align:center;
-}
-.home-search #btn-two{
-	all:unset;
-	border:none;
-	background-color: #d3d3d3;
-	border-radius:25px;
-	padding:1%;
-	margin: auto;
-	width:40%;
-}
-.home-search #btn-two:hover{
-	background-color: #cac6ca;
-}
 /*search area formatting end*/
 
 /*listings formatting start*/
+.page-body #properties-area{
+	width: 100%;
+	display: inline-grid;
+	gap: 50px;
+	grid-template-columns: 1fr 1fr 1fr;
+	overflow:hidden;
+}
 /*home - mls*/
 #mls-property-area{
 	width:100%;
@@ -322,39 +318,26 @@ form {
 ::placeholder{
 }
 /* search button*/
-
 #mls-search-btn{
 	all:unset;
 	border: none;
 	padding:0.1%;
 	margin: 0.1%;
+	font-size:150%;
+	color: #cac6ca;
 }
-#search-image{
-}
-.button-area{
-	text-align:right;
-}
-#btn-two{
-	all:unset;
-	border:none;
-	background-color: #d3d3d3;
-	border-radius:25px;
-	padding:1%;
-	margin: auto;
-	width:20%;
-}
-#btn-two:hover{
-	background-color: #cac6ca;
+#mls-search-btn:hover{
+	color: #d3d3d3;
 }
 /*search area formatting end*/
 /*listings formatting start*/
 /*index - multiple properties*/
-/*
 .page-body #properties-area{
+	width:100%;
 	display: inline-grid;
-	gap: 50px;
+	gap: 5%;
 	grid-template-columns: 1fr 1fr 1fr;
-}*/
+}
 /*listings formatting end*/
 /*index end*/
 

@@ -1,21 +1,21 @@
 
 <?php
 
-/**
- * MyOriginalTheme functions and definitions
- * @package originaltheme-rachelwhite
- * @since MyOriginalTheme 1.0
- */
-   
 /////////////////////////////////////////////////////////////////////////////////////////////////
 // Enqueue stylesheet //	
 
-function add_theme_style() {
-  
-	wp_enqueue_style( 'style', get_template_directory_uri() . '/css/mystyle.css',false,'1.1','all');
-  
+function my_theme_scripts() {
+
+    //stylesheet
+    wp_enqueue_style( 'style', get_template_directory_uri() . '/css/mystyle.css');
+    //font-awesome
+    wp_enqueue_script('font-awesome','https://kit.fontawesome.com/17aa4105b5.js');
+    //condensed menu
+    wp_enqueue_script('menu', get_template_directory_uri() . '/js/getcondensedmenu.js');
+
+
 }
-add_action( 'wp_enqueue_scripts', 'add_theme_style' );
+add_action( 'wp_enqueue_scripts', 'my_theme_scripts' );
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -23,7 +23,7 @@ add_action( 'wp_enqueue_scripts', 'add_theme_style' );
 
 function mynewfavicon(){
 	
-	echo '<link rel="Shortcut Icon" type="image/x-icon" href="'.get_stylesheet_directory_uri().'/images/T3000_logo_tophalf.ico"/>';
+	echo '<link rel="Shortcut Icon" type="image/x-icon" href="'.get_template_directory_uri().'/images/T3000_logo_tophalf.ico"/>';
 	
 }
 /*adds a favicon to admin area*/
