@@ -8,7 +8,7 @@
 	<section class="footer-left">
 		<section class="contact-section">
 			<h2>Contact</h2>
-			<h4>Brian White</h4>
+			<h3>Brian White</h3>
 			<h4><a href="mailto:groupw@telus.net">groupw@telus.net</a></h4>
 			<h4><a href="tel:(604)961-4104">(604)961-4104</a></h4>
 		</section>

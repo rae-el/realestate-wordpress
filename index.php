@@ -14,18 +14,6 @@
 		</section>
 	</section>
 	<section class="page-body">
-		<!-- NOT A WORKING SEARCH -->
-		<section class="search-and-click">
-			<section class="search-area">
-				<form id="search-form" role="search">
-                    <label for="mls-search"></label>
-                    <input type="search" id="mls-search" name="mls-search" placeholder="MLS Search">
-					<button id="mls-search-btn">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-					</button>
-				</form>
-			</section>
-		</section>
 		<h2 class="page-title">
 		<?php wp_title(false); ?>	</h2>
 		<section class="page-content">

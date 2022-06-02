@@ -11,10 +11,10 @@
 		</section>
 		<section class="title-slogan-area">
 			<section class="title-area">
-				<h1>Brian White</h1>
+				<h1>Beach District Properties.</h1>
 			</section>
 			<section class="slogan-area">
-				<h2>Beach District Properties.</h2>
+				<h2>Hi, I'm Brian White and I look forward to helping you find your next property.</h2>
 			</section>
 		</section>
 	</section>
