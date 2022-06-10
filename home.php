@@ -18,19 +18,9 @@
 			</section>
 		</section>
 	</section>
-<!-- NOT A WORKING SEARCH -->
-	<section class="home-search">
-		<section class="search-and-click">
-			<section class="search-area">
-				<form id="search-form" role="search">
-					<input type="search" id="mls-search" name="mls-search" placeholder="MLS Search">
-					<button id="mls-search-btn" onclick="getproperty()">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-					</button>
-				</form>
-			</section>
-		</section>
-	</section>
-	<section id="properties-area"></section>
+    <section class="page-body">
+        <section id="properties-area">
+        </section>
+    </section>
 </body>
 <?php get_footer(); ?>

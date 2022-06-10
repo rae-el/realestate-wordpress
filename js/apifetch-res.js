@@ -23,13 +23,18 @@ function show(data){
 		tab += `<section class="property-box">
 		<img class="property-pic" src="${r.Property.Photo[0].HighResPath}" width="350" height="250">
 		<section class="property-details">
-		<h4 class="property-address">${r.Property.Address.AddressText}</h4>
 		<h4 class="property-price">${r.Property.Price}</h4>
+		<p class="property-address">${r.Property.Address.AddressText}</p>
 		<section class="property-subdetails">
-		<p> ${r.Building.Bedrooms}  ${r.Building.BathroomTotal}  ${r.Land.SizeTotal}</p>
+			<i class="fa-solid fa-bed"></i>
+			<p> ${r.Building.Bedrooms} </p>
+			<i class="fa-solid fa-bath"></i>
+			<p> ${r.Building.BathroomTotal}</p>
+			<i class="fa-solid fa-ruler-combined"></i>
+			<p>${r.Land.SizeTotal}</p>
 		</section>
 		</section>
 		</section>`;
-	}	
+	}
 	document.getElementById("properties-area").innerHTML = tab;
 }
