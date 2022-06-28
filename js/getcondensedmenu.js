@@ -2,13 +2,16 @@ const condensedMenu = document.querySelector(".condensed-menu");
 const navMenu = document.querySelector(".nav-menu");
 const navLink = document.querySelectorAll(".nav-link");
 
-//not working because page not loaded yet?
-
 //here for testing, delete later
+//this line appears
 console.log("entered function getcondensedmenu");
+//error produced here as soon as page loads
 
 //if click on the menu icon
-condensedMenu.addEventListener("click", showCondensedMenu);
+//the ? here removes the error but also is not entering the function
+if (condensedMenu){
+	condensedMenu.addEventListener("click", showCondensedMenu);
+}
 
 //show listed menu
 function showCondensedMenu(){

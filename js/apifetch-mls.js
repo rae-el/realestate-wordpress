@@ -53,12 +53,17 @@ function show(data){
 	let tab = "";
 	for (let r of data.Results){
 		tab += `<section class="property-box">
-		<img class="property-pic" src="${r.Property.Photo[0].HighResPath}" alt="Property Photo" width="350" height="250">
+		<img class="property-pic" src="${r.Property.Photo[0].HighResPath}" alt="Property Photo">
 		<section class="property-details">
 		<h4 class="property-address">${r.Property.Address.AddressText}</h4>
 		<h4 class="property-price">${r.Property.Price}</h4>
 		<section class="property-subdetails">
-		<p>Beds: ${r.Building.Bedrooms} Baths: ${r.Building.BathroomTotal} Size: ${r.Land.SizeTotal}</p>
+			<i class="fa-solid fa-bed"></i>
+			<p> ${r.Building.Bedrooms} </p>
+			<i class="fa-solid fa-bath"></i>
+			<p> ${r.Building.BathroomTotal}</p>
+			<i class="fa-solid fa-ruler-combined"></i>
+			<p>${r.Land.SizeTotal}</p>
 		</section>
 		</section>
 		</section>`;

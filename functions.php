@@ -10,8 +10,6 @@ function my_theme_scripts() {
     wp_enqueue_style( 'style', get_template_directory_uri() . '/css/mystyle.css');
     //font-awesome
     wp_enqueue_script('font-awesome','https://kit.fontawesome.com/17aa4105b5.js');
-    //condensed menu
-    wp_enqueue_script('menu', get_template_directory_uri() . '/js/getcondensedmenu.js');
 
 
 }
@@ -31,16 +29,18 @@ add_action('admin_head', 'mynewfavicon');
 /*adds a favicon to my site*/
 add_action('wp_head', 'mynewfavicon');
 
-////////////////////////////////////////////////////////////////////////////////////////////
-// my menu //
-function my_new_menu() {
-  register_nav_menu('my-new-menu',__( 'My New Menu' ));
-}
-add_action( 'init', 'my_new_menu' );
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/*wp_nav_menu( array( 
-	'theme_location' => 'my-new-menu', 
-	'container_class' => 'menu-area' ) ); */
+// Enqueue menu //
+
+function my_condensed_menu() {
+
+      //condensed menu
+    wp_enqueue_script('menu', get_template_directory_uri() . '/js/getcondensedmenu.js');
+
+
+}
+add_action( 'wp_enqueue_scripts', 'my_condensed_menu' );
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // api calls //
@@ -107,6 +107,17 @@ function featured_widget_widgets_init() {
 }
 add_action('widgets_init','featured_widget_widgets_init');
 */
+////////////////////////////////////////////////////////////////////////////////////////////
+// my menu //
+/*
+function my_new_menu() {
+    register_nav_menu('my-new-menu',__( 'My New Menu' ));
+}
+add_action( 'init', 'my_new_menu' );
+*/
+/*wp_nav_menu( array(
+	'theme_location' => 'my-new-menu',
+	'container_class' => 'menu-area' ) ); */
 
 
   

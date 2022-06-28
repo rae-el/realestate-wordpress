@@ -26,6 +26,11 @@
 	<section class="footer-right">
 		<section class="site-navigation">
 			<h2>Site Navigation</h2>
+            <a href="/wordpress">Home</a>
+            <a href="/wordpress/about">About</a>
+            <a href="/wordpress/residential">Residential Properties</a>
+            <a href="/wordpress/commercial">Commercial Properties</a>
+            <a href="/wordpress/resources">Resources</a>
 		</section>
 	</section>
 </section>

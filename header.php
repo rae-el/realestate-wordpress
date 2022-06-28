@@ -36,13 +36,7 @@
 					<li class="nav-item">
 						<a href="/wordpress/resources" class="nav-link">Resources</a>
 					</li>
-					<li class="nav-item">
-						<a href="/wordpress/search" class="nav-link"><i class="fa-solid fa-magnifying-glass"></i></a>
-					</li>
 				</ul>
-				<div class="condensed-menu">
-					<i id="menuIcon" class="fa-solid fa-bars">menu</i>
-				</div>
 			</nav>
 		</section>
 	</header>

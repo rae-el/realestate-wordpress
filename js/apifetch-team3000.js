@@ -25,7 +25,7 @@ function show(data){
 	let tab = "";
 	for (let r of data.Results){
 		tab += `<section class="property-box">
-		<img class="property-pic" src="${r.Property.Photo[0].HighResPath}" width="350" height="250">
+		<img class="property-pic" src="${r.Property.Photo[0].HighResPath}">
 		<section class="property-details">
 		<h4 class="property-price">${r.Property.Price}</h4>
 		<p class="property-address">${r.Property.Address.AddressText}</p>
