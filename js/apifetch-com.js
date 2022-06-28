@@ -20,7 +20,8 @@ getapiresponse(url,options);
 function show(data){
 	let tab = "";
 	for (let r of data.Results){
-		tab += `<section class="property-box">
+		try {
+			tab += `<section class="property-box">
 		<img class="property-pic" src="${r.Property.Photo[0].HighResPath}" alt="property picture">
 		<section class="property-details">
 		<h4 class="property-address">${r.Property.Address.AddressText}</h4>
@@ -33,6 +34,10 @@ function show(data){
 		</section>
 		</section>
 		</section>`;
-	}	
+		}
+		catch(e){
+			tab = '';
+			console.log(e);
+		}}
 	document.getElementById("properties-area").innerHTML = tab;
 }

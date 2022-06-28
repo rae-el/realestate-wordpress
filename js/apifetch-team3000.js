@@ -24,6 +24,7 @@ getapiresponse(url,options);
 function show(data){
 	let tab = "";
 	for (let r of data.Results){
+		try{
 		tab += `<section class="property-box">
 		<img class="property-pic" src="${r.Property.Photo[0].HighResPath}" alt="property picture">
 		<section class="property-details">
@@ -40,5 +41,9 @@ function show(data){
 		</section>
 		</section>`;
 	}
+	catch(e){
+		tab = '';
+		console.log(e);
+	}}
 	document.getElementById("properties-area").innerHTML = tab;
 }
