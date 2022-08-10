@@ -29,6 +29,8 @@
 		<section id="mls-property-area">
 		</section>
 	</section>
+	<section id="pagination">
+	</section>
 </body>
 
 <?php get_footer(); ?>

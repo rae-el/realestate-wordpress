@@ -94,6 +94,44 @@ function get_mls_listing(){
 add_action('wp_head','get_mls_listing');
 
 
+/////////////////////////////////
+//page generation
+/////////////////////////////////
+
+
+//commercial pagination
+/*
+function commercial_pagination(){
+ $new_page = array(
+          'post_title'    => 'Commercial',
+          'post_content'  => '',
+          'post_status'   => 'publish',
+          'post_author'   => 1,
+          'post_type'     => 'page',
+          'post_parent'     => 'commercial',
+          );
+          // Insert the post into the database
+          wp_insert_post( $new_page );
+}
+
+
+//create page
+function create_property_page(){
+//get the mls number from the link and use as the title
+ $new_page = array(
+          'post_title'    => 'test',
+          'post_content'  => 'test',
+          'post_status'   => 'publish',
+          'post_author'   => 1,
+          'post_category' => array(1),
+          'post_type'     => 'page'
+          );
+
+          // Insert the post into the database
+          wp_insert_post( $new_page );
+}*/
+
+
 /*
 function featured_widget_widgets_init() {
 	register_sidebar( array(
