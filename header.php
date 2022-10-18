@@ -36,6 +36,9 @@
 					<li class="nav-item">
 						<a href="/wordpress/resources" class="nav-link">Resources</a>
 					</li>
+					<li class="nav-item">
+                        <a href="/wordpress/search" class="nav-link"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    </li>
 				</ul>
 			</nav>
 		</section>

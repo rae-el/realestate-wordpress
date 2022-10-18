@@ -42,6 +42,19 @@ function my_condensed_menu() {
 }
 add_action( 'wp_enqueue_scripts', 'my_condensed_menu' );
 
+// Enqueue search //
+//really no clue why not working, not recognizing elements
+/*
+function my_search() {
+
+      //condensed menu
+    wp_enqueue_script('search', get_template_directory_uri() . '/js/apifetch-search.js');
+
+
+}
+add_action( 'wp_enqueue_scripts', 'my_search' );
+*/
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // api calls //
 //if the page is residential properties (id=30) get javascript for api fetch res
@@ -66,6 +79,17 @@ function get_com_listings(){
 	}
 }
 add_action('wp_head','get_com_listings');
+
+//if page is about get agent listings
+function get_agent_listings(){
+    if (is_page('7')){
+        ?>
+        <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/apifetch-ag.js">
+        </script>
+        <?php
+    }
+}
+add_action('wp_head','get_agent_listings');
 
 
 //if the page is home get javascript for api fetch team 3000

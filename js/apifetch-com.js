@@ -2,7 +2,7 @@
 var pageNum = 1;
 
 //url for API
-var urlPaged = 'https://realty-in-ca1.p.rapidapi.com/properties/list-commercial?LatitudeMax=49.3474068&LatitudeMin=49.013513&LongitudeMax=-122.740764&LongitudeMin=-123.1180341&CurrentPage='+pageNum+'&RecordsPerPage=15&SortOrder=A&NumberOfDays=0&BedRange=0-0&CultureId=1&BathRange=0-0&SortBy=6&TransactionTypeId=2'
+var urlPaged = 'https://realty-in-ca1.p.rapidapi.com/properties/list-commercial?LatitudeMax=49.3474068&LatitudeMin=49.013513&LongitudeMax=-122.740764&LongitudeMin=-123.1180341&CurrentPage='+pageNum+'&RecordsPerPage=30&SortOrder=A&NumberOfDays=0&BedRange=0-0&CultureId=1&BathRange=0-0&SortBy=6&TransactionTypeId=2'
 
 //ideally move these to a private file not uploaded to GitHub
 const options = {
@@ -23,6 +23,17 @@ async function getApiResponse(urlPaged,options){
 	show(data);
 	//get pages
 	getPages(data);
+	//get current page
+	var currentPage = data.Paging.CurrentPage;
+	console.log(currentPage)
+	//highlight page button
+	var pageElements = document.getElementsByTagName("button");
+	for (element of pageElements){
+		if (currentPage == element.id){
+			element.value = "on";
+			console.log(element);
+		}
+	}
 }
 
 getApiResponse(urlPaged,options);
@@ -59,7 +70,7 @@ function show(data){
 	var tab = "";
 	for (var r of data.Results){
 		try {
-			tab += `<a href="/mls/${r.MlsNumber}"><section class="property-box">
+			tab += `<section class="property-box">
 		<img class="property-pic" src="${r.Property.Photo[0].HighResPath}" alt="property picture">
 		<section class="property-details">
 		<h4 class="property-address">${r.Property.Address.AddressText}</h4>
@@ -71,22 +82,40 @@ function show(data){
 			<p>${r.Land.SizeTotal}</p>
 		</section>
 		</section>
-		</section></a>`;
+		</section>`;
 		}
 		catch(e){
-			tab = '';
-			console.log(e);
-		}}
+			//if error try again replacing image with font awesome icon
+			try {
+				tab += `<section class="property-box">
+				<span class="property-pic"><i class="fa-solid fa-building"></i></span>
+				<section class="property-details">
+				<h4 class="property-address">${r.Property.Address.AddressText}</h4>
+				<h4 class="property-price">${r.Property.Price}</h4>
+				<section class="com-property-subdetails">
+					<i class="fa-solid fa-building"></i>
+					<p> ${r.Property.Type} </p>
+					<i class="fa-solid fa-ruler-combined"></i>
+					<p>${r.Land.SizeTotal}</p>
+				</section>
+				</section>
+				</section>`;
+			}
+			catch(e){
+				tab = '';
+				console.log(e);
+			}}
+		}
 	document.getElementById("properties-area").innerHTML = tab;
 }
 
 //call api with page number
 function newPage(){
 	var p = event.srcElement.id;
-	document.getElementById(p).value = "on";
+	//document.getElementById(p).value = "on";
 	var pageNum = p;
 	//url for API
-	var urlPaged = 'https://realty-in-ca1.p.rapidapi.com/properties/list-commercial?LatitudeMax=49.3474068&LatitudeMin=49.013513&LongitudeMax=-122.740764&LongitudeMin=-123.1180341&CurrentPage='+pageNum+'&RecordsPerPage=15&SortOrder=A&NumberOfDays=0&BedRange=0-0&CultureId=1&BathRange=0-0&SortBy=6&TransactionTypeId=2'
+	var urlPaged = 'https://realty-in-ca1.p.rapidapi.com/properties/list-commercial?LatitudeMax=49.3474068&LatitudeMin=49.013513&LongitudeMax=-122.740764&LongitudeMin=-123.1180341&CurrentPage='+pageNum+'&RecordsPerPage=30&SortOrder=A&NumberOfDays=0&BedRange=0-0&CultureId=1&BathRange=0-0&SortBy=6&TransactionTypeId=2'
 	//ideally move these to a private file not uploaded to GitHub
 	const options = {
 		method: 'GET',

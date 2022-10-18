@@ -1,10 +1,12 @@
 //this is the javascript to call for specific mls property from my api
+//really no clue why not working, not recognizing elements
 
-var mls = "R2730551";
+var m = document.getElementById("mls-input").value;
+console.log(m)
 
-var url = 'https://realty-in-ca1.p.rapidapi.com/properties/list-by-mls?CultureId=1&ReferenceNumber='+mls;
+var u = 'https://realty-in-ca1.p.rapidapi.com/properties/list-by-mls?CultureId=1&ReferenceNumber='+m;
 
-const options = {
+const o = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Host': 'realty-in-ca1.p.rapidapi.com',
@@ -13,13 +15,13 @@ const options = {
 };
 
 
-async function getproperty(url,options){
+async function searchMLS(u,o){
 	try {
-	const response = await fetch(url,options);
+	const response = await fetch(u,o);
 	
-	var data = await response.json();
-	console.log(data);
-	show(data);
+	var d = await response.json();
+	console.log(d);
+	show(d);
 	}
 	catch (e){
 		console.error(e);
@@ -27,11 +29,9 @@ async function getproperty(url,options){
 	
 }
 
-getproperty(url,options);
-
-function show(data){
+function show(d){
 	let tab = "";
-	for (let r of data.Results){
+	for (let r of d.Results){
 		tab += `<section class="property-box">
 		<img class="property-pic" src="${r.Property.Photo[0].HighResPath}" alt="Property Photo">
 		<section class="property-details">
@@ -50,3 +50,4 @@ function show(data){
 	}	
 	document.getElementById("mls-property-area").innerHTML = tab;
 }
+

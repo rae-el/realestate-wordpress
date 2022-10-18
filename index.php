@@ -13,19 +13,16 @@
 		</section>
 	</section>
 	<section class="page-body">
-	<h3>
-    <?php
-    global $post;
-    $post_slug=$post->post_name;
-    echo $post_slug;
-    ?>
-    </h3>
-		<h2 class="page-title" id="top">
-		<?php
-		wp_title(false);
-		 ?>
-		</h2>
 		<section class="page-content">
+		<h2 class="page-title" id="top">
+        		<?php
+        		wp_title(false);
+        		 ?>
+        </h2>
+        <!--<form onsubmit="searchMLS()">
+            <input id="mls-input" type="text" placeholder="search by mls number...">
+            <button id="search-mls" type="submit">
+        </form>-->
 			<?php
 				$pageid = get_the_id();
 				$content_post = get_post($pageid);
