@@ -22,5 +22,7 @@
         <section id="properties-area">
         </section>
     </section>
+    <section id="pagination">
+    </section>
 </body>
 <?php get_footer(); ?>

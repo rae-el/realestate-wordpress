@@ -101,20 +101,25 @@ add_action('wp_head','get_mls_listing');
 
 //commercial pagination
 /*
-function commercial_pagination(){
- $new_page = array(
-          'post_title'    => 'Commercial',
-          'post_content'  => '',
-          'post_status'   => 'publish',
-          'post_author'   => 1,
-          'post_type'     => 'page',
-          'post_parent'     => 'commercial',
-          );
-          // Insert the post into the database
-          wp_insert_post( $new_page );
+function commercial_pagination($pageNum){
+//check if exists
+    if ( get_page_by_title( $pageNum ) == null ) {
+         // Insert post
+         $new_page = array(
+                  'post_title'    => 'Commercial',
+                  'post_content'  => '',
+                  'post_status'   => 'publish',
+                  'post_author'   => 1,
+                  'post_type'     => 'page',
+                  'post_parent'   => 'commercial',
+                  'post_name'     => $pageNum,
+                  );}
+                  // Insert the post into the database
+                  wp_insert_post( $new_page );
 }
+*/
 
-
+/*
 //create page
 function create_property_page(){
 //get the mls number from the link and use as the title

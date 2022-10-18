@@ -1,7 +1,7 @@
 //this is the javascript to call for properties by Team 3000
 // OrganizationId = 147734
-
-const url = 'https://realty-in-ca1.p.rapidapi.com/agents/get-listings?OrganizationId=147734&CurrentPage=1&RecordsPerPage=15&SortOrder=D&SortBy=6&CultureId=1'
+var pageNum = 1;
+const url = 'https://realty-in-ca1.p.rapidapi.com/agents/get-listings?OrganizationId=147734&CurrentPage='+pageNum+'&RecordsPerPage=15&SortOrder=D&SortBy=6&CultureId=1'
 const options = {
 	method: 'GET',
 	headers: {
@@ -15,6 +15,7 @@ async function getapiresponse(url,options){
 	var data = await response.json();
 	console.log(data);
 	show(data);
+	getPages(data);
 
 }
 
@@ -46,4 +47,47 @@ function show(data){
 		console.log(e);
 	}}
 	document.getElementById("properties-area").innerHTML = tab;
+}
+
+//get the pages, create buttons and links
+function getPages(data){
+	console.log('Entered getPages function');
+	//always number pages starting from 1
+	var page = 1;
+	//get total pages
+	totalPages = data.Paging.TotalPages;
+	//log total pages
+	console.log(totalPages);
+	//get element to input page numbers
+	var paginate = document.getElementById("pagination");
+	//clear element
+	paginate.innerHTML = '';
+	//loop through every page and create a button with id as page number
+	//add event listener to each button
+	for (; page <= totalPages; page++){
+		var btn = document.createElement("button");
+		btn.innerHTML = page;
+		btn.className = "pageBtn";
+		btn.id = page;
+		paginate.appendChild(btn);
+		document.getElementById(page).addEventListener("click",newPage)
+	}
+}
+
+//call api with page number
+function newPage(){
+	var p = event.srcElement.id;
+	var pageNum = p;
+	//url for API
+	var urlPaged = 'https://realty-in-ca1.p.rapidapi.com/properties/list-commercial?LatitudeMax=49.3474068&LatitudeMin=49.013513&LongitudeMax=-122.740764&LongitudeMin=-123.1180341&CurrentPage='+pageNum+'&RecordsPerPage=15&SortOrder=A&NumberOfDays=0&BedRange=0-0&CultureId=1&BathRange=0-0&SortBy=6&TransactionTypeId=2'
+	//ideally move these to a private file not uploaded to GitHub
+	const options = {
+		method: 'GET',
+		headers: {
+			'X-RapidAPI-Host': 'realty-in-ca1.p.rapidapi.com',
+			'X-RapidAPI-Key': '6961dcebb5mshe3477bd2f0876fap118313jsn9d615631a184'
+		}
+	};
+	getApiResponse(urlPaged,options)
+	//tag to top of page
 }
