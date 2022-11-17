@@ -1,9 +1,11 @@
 //this is the javascript to call for specific mls property from my api
+//this isn't working because it is trying to get the event listener element when it does not exist yet
 
 var mls = "R2730551";
 
 var url = 'https://realty-in-ca1.p.rapidapi.com/properties/list-by-mls?CultureId=1&ReferenceNumber='+mls;
 
+//ideally move these to private
 const options = {
 	method: 'GET',
 	headers: {

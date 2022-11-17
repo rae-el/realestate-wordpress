@@ -1,8 +1,10 @@
 //this is the javascript to call for commercial properties from my api
+
+var records = 3;
 var pageNum = 1;
 
 //url for API
-var urlPaged = 'https://realty-in-ca1.p.rapidapi.com/properties/list-commercial?LatitudeMax=49.3474068&LatitudeMin=49.013513&LongitudeMax=-122.740764&LongitudeMin=-123.1180341&CurrentPage='+pageNum+'&RecordsPerPage=30&SortOrder=A&NumberOfDays=0&BedRange=0-0&CultureId=1&BathRange=0-0&SortBy=6&TransactionTypeId=2'
+var urlPaged = 'https://realty-in-ca1.p.rapidapi.com/properties/list-commercial?LatitudeMax=49.3474068&LatitudeMin=49.013513&LongitudeMax=-122.740764&LongitudeMin=-123.1180341&CurrentPage='+pageNum+'&RecordsPerPage='+records+'&SortOrder=A&NumberOfDays=0&BedRange=0-0&CultureId=1&BathRange=0-0&SortBy=6&TransactionTypeId=2'
 
 //ideally move these to a private file not uploaded to GitHub
 const options = {
@@ -28,10 +30,10 @@ async function getApiResponse(urlPaged,options){
 	console.log(currentPage)
 	//highlight page button
 	var pageElements = document.getElementsByTagName("button");
+	console.log(pageElements);
 	for (element of pageElements){
 		if (currentPage == element.id){
 			element.value = "on";
-			console.log(element);
 		}
 	}
 }
@@ -115,7 +117,7 @@ function newPage(){
 	//document.getElementById(p).value = "on";
 	var pageNum = p;
 	//url for API
-	var urlPaged = 'https://realty-in-ca1.p.rapidapi.com/properties/list-commercial?LatitudeMax=49.3474068&LatitudeMin=49.013513&LongitudeMax=-122.740764&LongitudeMin=-123.1180341&CurrentPage='+pageNum+'&RecordsPerPage=30&SortOrder=A&NumberOfDays=0&BedRange=0-0&CultureId=1&BathRange=0-0&SortBy=6&TransactionTypeId=2'
+	var urlPaged = 'https://realty-in-ca1.p.rapidapi.com/properties/list-commercial?LatitudeMax=49.3474068&LatitudeMin=49.013513&LongitudeMax=-122.740764&LongitudeMin=-123.1180341&CurrentPage='+pageNum+'&RecordsPerPage='+records+'&SortOrder=A&NumberOfDays=0&BedRange=0-0&CultureId=1&BathRange=0-0&SortBy=6&TransactionTypeId=2'
 	//ideally move these to a private file not uploaded to GitHub
 	const options = {
 		method: 'GET',

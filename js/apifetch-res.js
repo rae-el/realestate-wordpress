@@ -1,6 +1,7 @@
 //this is the javascript to call for residential properties from my api
+var records = 3;
 var pageNum = 1;
-const url = 'https://realty-in-ca1.p.rapidapi.com/properties/list-residential?LatitudeMax=49.3474068&LatitudeMin=49.013513&LongitudeMax=-122.740764&LongitudeMin=-123.1180341&CurrentPage='+pageNum+'&RecordsPerPage=30&SortOrder=A&SortBy=6&CultureId=1&NumberOfDays=0&BedRange=1-0&BathRange=1-0&PriceMin=800000&TransactionTypeId=2'
+const url = 'https://realty-in-ca1.p.rapidapi.com/properties/list-residential?LatitudeMax=49.3474068&LatitudeMin=49.013513&LongitudeMax=-122.740764&LongitudeMin=-123.1180341&CurrentPage='+pageNum+'&RecordsPerPage='+records+'&SortOrder=A&SortBy=6&CultureId=1&NumberOfDays=0&BedRange=1-0&BathRange=1-0&PriceMin=800000&TransactionTypeId=2'
 const options = {
 	method: 'GET',
 	headers: {
@@ -108,7 +109,7 @@ function newPage(){
 	var p = event.srcElement.id;
 	var pageNum = p;
 	//url for API
-	var urlPaged = 'https://realty-in-ca1.p.rapidapi.com/properties/list-commercial?LatitudeMax=49.3474068&LatitudeMin=49.013513&LongitudeMax=-122.740764&LongitudeMin=-123.1180341&CurrentPage='+pageNum+'&RecordsPerPage=15&SortOrder=A&NumberOfDays=0&BedRange=0-0&CultureId=1&BathRange=0-0&SortBy=6&TransactionTypeId=2'
+	var urlPaged = 'https://realty-in-ca1.p.rapidapi.com/properties/list-commercial?LatitudeMax=49.3474068&LatitudeMin=49.013513&LongitudeMax=-122.740764&LongitudeMin=-123.1180341&CurrentPage='+pageNum+'&RecordsPerPage='+records+'&SortOrder=A&NumberOfDays=0&BedRange=0-0&CultureId=1&BathRange=0-0&SortBy=6&TransactionTypeId=2'
 	//ideally move these to a private file not uploaded to GitHub
 	const options = {
 		method: 'GET',
@@ -117,6 +118,6 @@ function newPage(){
 			'X-RapidAPI-Key': '6961dcebb5mshe3477bd2f0876fap118313jsn9d615631a184'
 		}
 	};
-	getApiResponse(urlPaged,options)
+	getapiresponse(urlPaged,options)
 	//tag to top of page
 }

@@ -1,4 +1,4 @@
-const condensedMenu = document.querySelector(".condensed-menu");
+const condensedMenu = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 const navLink = document.querySelectorAll(".nav-link");
 

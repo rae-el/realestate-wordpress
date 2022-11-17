@@ -1,7 +1,13 @@
 //this is the javascript to call for agent properties from my api
+//actually just getting organisation data not agent data
+
+//OrganizationId=147734
+//IndividualId=1559757
+
+var records = 3;
 var pageNum = 1;
 //url for API
-var urlPaged = 'https://realty-in-ca1.p.rapidapi.com/agents/get-listings?OrganizationId=147734&id=1559757&CurrentPage='+pageNum+'&RecordsPerPage=9&SortOrder=D&SortBy=6&CultureId=1'
+var urlPaged = 'https://realty-in-ca1.p.rapidapi.com/agents/get-listings?OrganizationId=147734&id=1559757&CurrentPage='+pageNum+'&RecordsPerPage='+records+'&SortOrder=D&SortBy=6&CultureId=1'
 
 //ideally move these to a private file not uploaded to GitHub
 const options = {
@@ -31,7 +37,6 @@ async function getApiResponse(urlPaged,options){
 	for (element of pageElements){
 		if (currentPage == element.id){
 			element.value = "on";
-			console.log(element);
 		}
 	}
 }
@@ -117,7 +122,7 @@ function newPage(){
 	document.getElementById(p).value = "on";
 	var pageNum = p;
 	//url for API
-	var urlPaged = 'https://realty-in-ca1.p.rapidapi.com/agents/get-listings?OrganizationId=147734&id=1559757&CurrentPage='+pageNum+'&RecordsPerPage=9&SortOrder=D&SortBy=6&CultureId=1'
+	var urlPaged = 'https://realty-in-ca1.p.rapidapi.com/agents/get-listings?OrganizationId=147734&id=1559757&CurrentPage='+pageNum+'&RecordsPerPage='+records+'&SortOrder=D&SortBy=6&CultureId=1'
 	//ideally move these to a private file not uploaded to GitHub
 	const options = {
 		method: 'GET',
