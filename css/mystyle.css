@@ -97,14 +97,13 @@ form {
 	display: flex;
 	flex-direction: column;
 	justify-content:center;
-	align-items:center;
+	align-items:flex-start;
 }
 .contact-info a {
-	padding: 1%;
+	padding: 1% 1% 1% 3%;
 }
 #pre-header-name{
 	font-family: encodeSemiBold;
-	padding-left: 1rem;
 }
 /*menu start*/
 .menu-area{
@@ -193,7 +192,6 @@ form {
 	justify-content: flex-start;
 	box-shadow: 0 20px 20px -15px #8D8A8E;
 	overflow: hidden;
-	text-shadow: 1px 1px 5px #8D8A8E;
 	clear:both;
 }
 /*head shot*/
@@ -339,6 +337,7 @@ button[value="on"]{
 	/*header*/
 	.main-page-header{
 		height: 300px;
+		text-shadow: 1px 1px 5px #8D8A8E;
 	}
 	.title-slogan-area{
 		padding-top: 2em;

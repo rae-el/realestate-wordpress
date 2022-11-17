@@ -15,7 +15,7 @@
 		<section class="pre-header">
 			<nav>
 				<ul><li class="contact-info">
-					<a id="pre-header-name" href="/wordpress">BrianWhite.</a>
+					<a id="pre-header-name" href="/">BrianWhite.</a>
 					<a href="mailto:groupw@telus.net">groupw@telus.net</a>
 					<a href="tel:(604)961-4104">(604)961-4104</a>
 				</li></ul>
@@ -28,25 +28,20 @@
 				</div>
 				<ul class="nav-menu">
 					<li class="nav-item">
-						<a href="/wordpress/residential" class="nav-link">Residential</a>
+						<a href="/index.php/residential" class="nav-link">Residential</a>
 					</li>
 					<li class="nav-item">
-						<a href="/wordpress/commercial" class="nav-link">Commercial</a>
+						<a href="/index.php/commercial" class="nav-link">Commercial</a>
 					</li>
 					<li class="nav-item">
-						<a href="/wordpress/resources" class="nav-link">Resources</a>
+						<a href="/index.php/resources" class="nav-link">Resources</a>
 					</li>
 					<li class="nav-item">
-						<a href="/wordpress/about" class="nav-link">About</a>
+						<a href="/index.php/about" class="nav-link">About</a>
 					</li>
 					<li class="nav-item">
-						<a href="/wordpress/contact" class="nav-link">Contact</a>
+						<a href="/index.php/contact" class="nav-link">Contact</a>
 					</li>
-					<!--
-					<li class="nav-item">
-                        <a href="/wordpress/search" class="nav-link"><i class="fa-solid fa-magnifying-glass"></i></a>
-                    </li>
--->
 				</ul>
 			</nav>
 		</section>

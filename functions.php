@@ -59,7 +59,7 @@ add_action( 'wp_enqueue_scripts', 'my_highlight_menu' );
 // api calls //
 //if the page is residential properties (id=30) get javascript for api fetch res
 function get_res_listings(){
-	if (is_page('30')){
+	if (is_page('6')){
 		?>
 		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/apifetch-res.js">
 		</script>
@@ -71,7 +71,7 @@ add_action('wp_head','get_res_listings');
 
 //if the page is commercial properties (id=56) get javascript for api fetch comm
 function get_com_listings(){
-	if (is_page('56')){
+	if (is_page('9')){
 		?>
 		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/apifetch-com.js">
 		</script>
