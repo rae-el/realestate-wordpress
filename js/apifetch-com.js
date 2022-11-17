@@ -1,6 +1,6 @@
 //this is the javascript to call for commercial properties from my api
 
-var records = 3;
+var records = 12;
 var pageNum = 1;
 
 //url for API
