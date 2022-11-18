@@ -48,11 +48,17 @@ function my_theme_scripts() {
 	// enqueue template stylesheets
 	//home
 	if (is_home()){
-		wp_enqueue_style( 'homestyle', get_template_directory_uri() . '/css/homestyle.css' );
+		wp_enqueue_style( 'home', get_template_directory_uri() . '/css/homestyle.css' );
 	}
-	if (is_page_template('index.php')){
-		wp_enqueue_style( 'indexstyle', get_template_directory_uri() . '/css/indexstyle.css' );
+	//residential properties (id=30 personal or id=6 screencraft) or commercial properties (id=56 personal or id=9 screencraft)
+	if (is_page(array('30','56'))){
+		wp_enqueue_style( 'gridlistings', get_template_directory_uri() . '/css/gridlistingsstyle.css' );
 	  }
+	
+	//contact
+	if (is_page('83')){
+		wp_enqueue_style( 'contact', get_template_directory_uri() . '/css/contactstyle.css' );
+	}
 
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_scripts' );

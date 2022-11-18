@@ -4,7 +4,6 @@
 	width: fit-content;
 }
 .page-body{
-    background-color: #0E1722;
 	padding:3% 1% 1% 1%;
 	width: 100%;
 	display: flex;
@@ -151,10 +150,17 @@ button[value="on"]{
 		width: 50%;
 		margin: auto;
 	}
+	
 }
 @media (min-width: 1000px){
 	/* listings*/
 	.page-body #properties-area{
 		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+@media (min-width: 1300px){
+	/* listings*/
+	.page-body #properties-area{
+		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
 }
