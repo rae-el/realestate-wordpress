@@ -6,11 +6,23 @@
 
 function my_theme_scripts() {
 
-    //stylesheet
+    //main stylesheet
     wp_enqueue_style( 'style', get_template_directory_uri() . '/css/mystyle.css');
+
     //font-awesome
     wp_enqueue_script('font-awesome','https://kit.fontawesome.com/17aa4105b5.js');
 
+	//condensed menu
+    wp_enqueue_script('menu', get_template_directory_uri() . '/js/getcondensedmenu.js');
+
+	// enqueue template stylesheets
+	//home
+	if (is_home()){
+		wp_enqueue_style( 'homestyle', get_template_directory_uri() . '/css/homestyle.css' );
+	}
+	if (is_page_template('index.php')){
+		wp_enqueue_style( 'indexstyle', get_template_directory_uri() . '/css/indexstyle.css' );
+	  }
 
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_scripts' );
@@ -30,44 +42,35 @@ add_action('admin_head', 'mynewfavicon');
 add_action('wp_head', 'mynewfavicon');
 
 
-
 //////////////////////////////////////////////////////////////////////////////////////////
 // api calls //
-//if the page is residential properties (id=30) get javascript for api fetch res
-function get_res_listings(){
-	if (is_page('6')){
-		?>
-		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/apifetch-res.js">
-		</script>
-		<?php
-	}
-}
-add_action('wp_head','get_res_listings');
-
-
-//if the page is commercial properties (id=56) get javascript for api fetch comm
-function get_com_listings(){
-	if (is_page('9')){
-		?>
-		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/apifetch-com.js">
-		</script>
-		<?php
-	}
-}
-add_action('wp_head','get_com_listings');
-
-
-
-//if the page is home get javascript for api fetch team 3000
-function get_team_listings(){
+function get_api_call(){
+	//if the page is home get javascript for api fetch team 3000 listings
 	if (is_home()){
 		?>
 		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/apifetch-team3000.js">
 		</script>
 		<?php
 	}
+
+	//if the page is residential properties (id=30 personal or id=6 screencraft) get javascript for api fetch res
+	if (is_page('30')){
+		?>
+		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/apifetch-res.js">
+		</script>
+		<?php
+	}
+
+	//if the page is commercial properties (id=56 personal or id=9 screencraft) get javascript for api fetch comm
+	if (is_page('56')){
+		?>
+		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/apifetch-com.js">
+		</script>
+		<?php
+	}
 }
-add_action('wp_head','get_team_listings');
+add_action('wp_head','get_api_call');
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 /* form */
@@ -86,6 +89,7 @@ add_action('wp_head','get_form');
 
 // Enqueue menu //
 //still working on this - paused for now
+/*
 function my_condensed_menu() {
 
       //condensed menu
@@ -93,7 +97,7 @@ function my_condensed_menu() {
 
 
 }
-add_action( 'wp_enqueue_scripts', 'my_condensed_menu' );
+add_action( 'wp_enqueue_scripts', 'my_condensed_menu' );*/
 
 
 // Enqueue menu highlight //

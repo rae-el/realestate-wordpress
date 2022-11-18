@@ -1,0 +1,160 @@
+/*index start*/
+.page-title{
+	padding-bottom: 2%;
+	width: fit-content;
+}
+.page-body{
+    background-color: #0E1722;
+	padding:3% 1% 1% 1%;
+	width: 100%;
+	display: flex;
+	flex-direction:column;
+	justify-content: center;
+	clear:both;
+}
+.page-content{
+	width: 80%;
+	margin: auto;
+}
+/*index end*/
+
+/**************************************************************************************/
+
+/*listings start*/
+.page-body #properties-area{
+	width:95%;
+	align-self: center;
+	display: inline-grid;
+	grid-template-columns: 1fr;
+}
+.property-box{
+	border: none;
+	padding: 3%;
+	margin: 3%;
+	display: flex;
+	flex-direction:column;
+	justify-content: flex-start;
+}
+.property-pic{
+	align-self: center;
+	width: 80%;
+	height: auto;
+	font-size: 6em;
+	text-align: center;
+}
+.property-details{
+	padding: 1%;
+}
+.property-subdetails{
+	width: 70%;
+	padding-left: 0.3em;
+	display: inline-grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 5fr;
+}
+.com-property-subdetails{
+	width: 100%;
+	padding: 1%;
+	display: inline-grid;
+	grid-template-columns: 1fr 3fr 1fr 3fr;
+}
+
+/*pagination */
+#pagination{
+	width: 80%;
+	justify-content: center;
+	clear:both;
+	display: flex;
+	flex-direction:row;
+	margin: auto;
+	flex-wrap: wrap;
+}
+.pageBtn{
+	border: none;
+	background: none;
+	font-size: 1em;
+	padding: 0.5%;
+}
+.pageBtn:hover, .pageBtn:focus{
+	color: #3D65AA;
+	cursor: pointer;
+}
+button[value="on"]{
+	color: #3D65AA;
+	text-decoration: underline;
+	font-weight: bold;
+}
+/*listings end*/
+/*********************************************************/
+/*form start*/
+.contact-form{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 100%;
+	margin: auto;
+	padding-left: 3em;
+}
+.contact-label{
+	text-align: left;
+	height:2em;
+	padding: 1%;
+	margin: 1%;
+	display: inline-block;
+}
+.contact-input,.contact-text{
+	float: right;
+	border: solid thin #3E454E;
+	clear: none;
+	width:60%;
+	padding: 1%;
+	margin: 1%;
+	resize: none;
+	text-align: left;
+}
+.contact-input{
+	height:2em;
+}
+.contact-text{
+	height:6em;
+}
+.contact-button{
+	background-color: #fff;
+	border-color: #0E1722;
+	color:#0E1722;
+	text-align: center;
+	height: 2.5em;
+	padding: 1%;
+	margin: 1%;
+}
+.contact-button:focus{
+	background-color: #0E1722;
+	color: #fff;
+}
+/*form end*/
+/*********************************************************/
+/*media queries*/
+@media (min-width: 730px){
+	/* listings*/
+	.page-body #properties-area{
+		grid-template-columns: 1fr 1fr;
+	}
+	.property-pic{
+		width: 3em;
+		height: 2em;
+	}
+	/*pagination*/
+	#pagination{
+		width: 50%;
+	}
+	/*form*/
+	.contact-form{
+		width: 50%;
+		margin: auto;
+	}
+}
+@media (min-width: 1000px){
+	/* listings*/
+	.page-body #properties-area{
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}

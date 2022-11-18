@@ -1,0 +1,71 @@
+/*home start*/
+.main-page-header{
+	background-image: url(../images/matt-wang-unsplash-whitewash.png);
+	background-size:auto 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #cac6ca;
+	height: 300px;
+	display: flex;
+	justify-content: flex-start;
+	box-shadow: 0 20px 20px -15px #8D8A8E;
+	overflow:visible;
+	top:0;
+
+}
+/*head shot*/
+.image-1-area{
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+.my-image-1{
+	visibility: hidden;
+}
+/*site visual title*/
+.title-slogan-area{
+	width: 100%;
+	position:relative;
+	padding-left: 1%;
+	margin: auto;
+}
+.title-area{
+	padding:0;
+}
+.slogan-area{
+	padding:0;
+	position:relative;
+}
+
+/*home end*/
+/*media queries*/
+@media (min-width: 730px){
+    /*header*/
+	.main-page-header{
+		height: 300px;
+		text-shadow: 1px 1px 5px #8D8A8E;
+	}
+	.title-slogan-area{
+		padding-top: 2em;
+		margin: 0;
+	}
+	/*headshot*/
+	.image-1-area{
+		visibility: visible;
+		align-self:center;
+		width: 185px;
+		height: 250px;
+		margin: 0 2% 0 2%;
+	}
+	.my-image-1{
+		visibility: visible;
+		box-shadow: 0 0 2px 1px #8D8A8E;
+		width: 100%;
+	}
+}
+@media (min-width: 1000px){
+	/*header*/
+	.main-page-header{
+		background-size: 100% auto;
+	}
+}

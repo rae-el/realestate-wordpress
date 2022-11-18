@@ -25,6 +25,7 @@
 			<nav class="navbar">
 				<div class=hamburger>
 					<i class="fa-solid fa-bars"></i>
+					<i class="fa-solid fa-x hide"></i>
 				</div>
 				<div class='nav-menu'>
 					<?php wp_nav_menu( array(

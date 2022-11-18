@@ -1,28 +1,25 @@
 document.addEventListener("DOMContentLoaded", function(){
 	const condensedMenu = document.querySelector(".hamburger");
+	const hamburgerIcon = document.querySelector("body > header > section.menu-area > nav > div.hamburger > svg.svg-inline--fa.fa-bars");
+	const xIcon = document.querySelector("body > header > section.menu-area > nav > div.hamburger > svg.svg-inline--fa.fa-x.hide");
 	const navMenu = document.querySelector(".nav-menu");
-	const navLink = document.querySelectorAll(".nav-link");
+	const navLink = document.querySelectorAll("body > header > section.menu-area > nav > div.nav-menu.active > div > ul > li > a");
 
-	//here for testing, delete later
-	//this line appears
-	console.log("entered function getcondensedmenu");
-	//error produced here as soon as page loads
-
-	//if click on the menu icon
-	//the ? here removes the error but also is not entering the function
-	if (condensedMenu){
-		condensedMenu.addEventListener("click", showCondensedMenu);
-	}
+	condensedMenu.addEventListener("click", openMenu);
 
 	//show listed menu
-	function showCondensedMenu(){
+	function openMenu(){
 		//here for testing, delete later
-		console.log("in showCondensedMenu");
+		console.log("in openMenu");
 
 		condensedMenu.classList.toggle("active");
 		navMenu.classList.toggle("active");
+		//this bit isn't working for some reason?
+		hamburgerIcon.classList.toggle("hide");
+		xIcon.classList.remove("hide");
 	}
 
+	
 	//if click on menu item
 	navLink.forEach(n => n.addEventListener("click", closeMenu));
 
@@ -33,5 +30,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
 		condensedMenu.classList.remove("active");
 		navMenu.classList.remove("active");
+		//this bit isn't working for some reason?
+		hamburgerIcon.classList.remove("hide");
+		xIcon.classList.toggle("hide");
 	}
 });
