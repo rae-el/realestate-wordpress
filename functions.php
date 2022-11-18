@@ -86,7 +86,6 @@ add_action('wp_head','get_form');
 
 // Enqueue menu //
 //still working on this - paused for now
-/*
 function my_condensed_menu() {
 
       //condensed menu
@@ -95,7 +94,7 @@ function my_condensed_menu() {
 
 }
 add_action( 'wp_enqueue_scripts', 'my_condensed_menu' );
-*/
+
 
 // Enqueue menu highlight //
 //still working on this - paused for now
@@ -159,15 +158,12 @@ add_action('widgets_init','featured_widget_widgets_init');
 */
 ////////////////////////////////////////////////////////////////////////////////////////////
 // my menu //
-/*
+
 function my_new_menu() {
     register_nav_menu('my-new-menu',__( 'My New Menu' ));
 }
 add_action( 'init', 'my_new_menu' );
-*/
-/*wp_nav_menu( array(
-	'theme_location' => 'my-new-menu',
-	'container_class' => 'menu-area' ) ); */
+
 
 
   
