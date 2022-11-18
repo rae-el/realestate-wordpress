@@ -49,6 +49,7 @@ function my_theme_scripts() {
 	//home
 	if (is_home()){
 		wp_enqueue_style( 'home', get_template_directory_uri() . '/css/homestyle.css' );
+		wp_enqueue_style( 'gridlistings', get_template_directory_uri() . '/css/gridlistingsstyle.css' );
 	}
 	//residential properties (id=30 personal or id=6 screencraft) or commercial properties (id=56 personal or id=9 screencraft)
 	if (is_page(array('30','56'))){
@@ -119,50 +120,17 @@ function get_api_call(){
 		</script>
 		<?php
 	}
-}
-add_action('wp_head','get_api_call');
 
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
-/* form */
-//if the page is contact (id=83)local and id=? screencraft get javascript for contact form
-function get_form(){
-	if (is_page('83')){
+	//if the page is search (properties) (id=93 personal or id=? screencraft) get javascript for api fetch search
+	if (is_page('93')){
 		?>
-		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/contact-form.js">
+		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/apifetch-search.js">
 		</script>
 		<?php
 	}
 }
-add_action('wp_head','get_form');
+add_action('wp_head','get_api_call');
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// Enqueue menu //
-//still working on this - paused for now
-/*
-function my_condensed_menu() {
-
-      //condensed menu
-    wp_enqueue_script('menu', get_template_directory_uri() . '/js/getcondensedmenu.js');
-
-
-}
-add_action( 'wp_enqueue_scripts', 'my_condensed_menu' );*/
-
-
-// Enqueue menu highlight //
-//still working on this - paused for now
-/*
-function my_highlight_menu() {
-
-      //condensed menu
-    wp_enqueue_script('highlight', get_template_directory_uri() . '/js/highlight-menu.js');
-
-
-}
-add_action( 'wp_enqueue_scripts', 'my_highlight_menu' );
-*/
 
 
 //if search page search for the featured mls number get javascript for api fetch mls

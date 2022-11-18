@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(){
 	const condensedMenu = document.querySelector(".hamburger");
-	const hamburgerIcon = document.querySelector("body > header > section.menu-area > nav > div.hamburger > svg.svg-inline--fa.fa-bars");
-	const xIcon = document.querySelector("body > header > section.menu-area > nav > div.hamburger > svg.svg-inline--fa.fa-x.hide");
+	const hamburgerIcon = document.getElementById("bar-icon");
+	const xIcon = document.getElementById("x-icon");
 	const navMenu = document.querySelector(".nav-menu");
 	const navLink = document.querySelectorAll("body > header > section.menu-area > nav > div.nav-menu.active > div > ul > li > a");
 

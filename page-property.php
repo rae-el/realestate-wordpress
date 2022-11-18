@@ -15,10 +15,14 @@
         		wp_title(false);
         		 ?>
         </h2>
-		<section id="properties-area">
+		<section class="search-area">
+			<form>
+				<input id="mls-input" type="text" placeholder="search by mls number...">
+				<button id="search-mls" type="submit">
+			</form>
 		</section>
-	</section>
-	<section id="pagination">
+		<section id="property-area">
+		</section>
 	</section>
 </body>
 

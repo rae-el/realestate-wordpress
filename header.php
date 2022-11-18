@@ -24,8 +24,8 @@
 		<section class="menu-area">
 			<nav class="navbar">
 				<div class=hamburger>
-					<i class="fa-solid fa-bars"></i>
-					<i class="fa-solid fa-x hide"></i>
+					<i id='bar-icon' class="fa-solid fa-bars"></i>
+					<i id='x-icon' class="fa-solid fa-x hide"></i>
 				</div>
 				<div class='nav-menu'>
 					<?php wp_nav_menu( array(

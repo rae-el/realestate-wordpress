@@ -46,15 +46,11 @@
 }
 .property-subdetails{
 	width: 70%;
-	padding-left: 0.3em;
-	display: inline-grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 5fr;
+	display: flex;
 }
-.com-property-subdetails{
-	width: 100%;
-	padding: 1%;
-	display: inline-grid;
-	grid-template-columns: 1fr 3fr 1fr 3fr;
+.property-subdetails > p{
+	padding-left: 0.3em;
+	padding-right: 0.7em;
 }
 
 /*pagination */

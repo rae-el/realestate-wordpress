@@ -77,7 +77,7 @@ function show(data){
 		<section class="property-details">
 		<h4 class="property-price">${r.Property.Price}</h4>
 		<p class="property-address">${r.Property.Address.AddressText}</p>
-		<section class="com-property-subdetails">
+		<section class="property-subdetails">
 			<i class="fa-solid fa-building"></i>
 			<p> ${r.Property.Type} </p>
 			<i class="fa-solid fa-ruler-combined"></i>
