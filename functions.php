@@ -29,31 +29,7 @@ add_action('admin_head', 'mynewfavicon');
 /*adds a favicon to my site*/
 add_action('wp_head', 'mynewfavicon');
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Enqueue menu //
-
-function my_condensed_menu() {
-
-      //condensed menu
-    wp_enqueue_script('menu', get_template_directory_uri() . '/js/getcondensedmenu.js');
-
-
-}
-add_action( 'wp_enqueue_scripts', 'my_condensed_menu' );
-
-// Enqueue menu highlight //
-//still working on this - paused for now
-/*
-function my_highlight_menu() {
-
-      //condensed menu
-    wp_enqueue_script('highlight', get_template_directory_uri() . '/js/highlight-menu.js');
-
-
-}
-add_action( 'wp_enqueue_scripts', 'my_highlight_menu' );
-*/
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // api calls //
@@ -80,16 +56,6 @@ function get_com_listings(){
 }
 add_action('wp_head','get_com_listings');
 
-//if page is about get agent listings
-function get_agent_listings(){
-    if (is_page('7')){
-        ?>
-        <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/apifetch-ag.js">
-        </script>
-        <?php
-    }
-}
-add_action('wp_head','get_agent_listings');
 
 
 //if the page is home get javascript for api fetch team 3000
@@ -102,6 +68,47 @@ function get_team_listings(){
 	}
 }
 add_action('wp_head','get_team_listings');
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* form */
+//if the page is contact (id=83)local and id=? screencraft get javascript for contact form
+function get_form(){
+	if (is_page('83')){
+		?>
+		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/contact-form.js">
+		</script>
+		<?php
+	}
+}
+add_action('wp_head','get_form');
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Enqueue menu //
+//still working on this - paused for now
+/*
+function my_condensed_menu() {
+
+      //condensed menu
+    wp_enqueue_script('menu', get_template_directory_uri() . '/js/getcondensedmenu.js');
+
+
+}
+add_action( 'wp_enqueue_scripts', 'my_condensed_menu' );
+*/
+
+// Enqueue menu highlight //
+//still working on this - paused for now
+/*
+function my_highlight_menu() {
+
+      //condensed menu
+    wp_enqueue_script('highlight', get_template_directory_uri() . '/js/highlight-menu.js');
+
+
+}
+add_action( 'wp_enqueue_scripts', 'my_highlight_menu' );
+*/
 
 
 //if search page search for the featured mls number get javascript for api fetch mls
@@ -119,7 +126,18 @@ function get_mls_listing(){
 add_action('wp_head','get_mls_listing');
 */
 
-
+//if page is about get agent listings
+/*
+function get_agent_listings(){
+    if (is_page('7')){
+        ?>
+        <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/apifetch-ag.js">
+        </script>
+        <?php
+    }
+}
+add_action('wp_head','get_agent_listings');
+ */
 /////////////////////////////////
 //page generation
 /////////////////////////////////

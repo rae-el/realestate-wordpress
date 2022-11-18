@@ -32,7 +32,7 @@
 		</section>
 		<section id="properties-area">
 		</section>
-		<section id="mls-property-area">
+		<section id="form-area">
 		</section>
 	</section>
 	<section id="pagination">
