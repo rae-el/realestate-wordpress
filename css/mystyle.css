@@ -112,17 +112,17 @@ form {
 	background-color: #D2CECF;
 	margin-top: 82px;
 }
-.nav-menu{
+div.nav-menu > div > ul{
 	display: flex;
 	flex-direction:column;
 	justify-content: center;
 	text-align: center;
 }
-.nav-item{
+.page-item{
 	padding: 0.5%;
 	margin: 0.5%;
 }
-.nav-item a{
+.menu a{
 	text-decoration: none;
 	color: #424242;
 	text-transform: uppercase;
@@ -130,11 +130,11 @@ form {
 	z-index: 5;
 	white-space: nowrap;
 }
-.nav-item a:hover{
+.menu a:hover{
 	color: #808080;
 	transition: 0.7s ease;
 }
-.nav-item a.active{
+.menu a.active{
 	color: #808080;
 	transition: 0.7s ease;
 }
@@ -270,7 +270,7 @@ form {
 }
 .property-subdetails{
 	width: 70%;
-	padding: 1%;
+	padding-left: 0.3em;
 	display: inline-grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 5fr;
 }
@@ -357,7 +357,7 @@ button[value="on"]{
 
 /*********************************************************/
 /*media queries*/
-@media (min-width: 700px){
+@media (min-width: 730px){
 	h1{
 		font-size: 3.5em;
 	}
@@ -378,9 +378,12 @@ button[value="on"]{
 		visibility: hidden;
 		height: 0;
 	}
-	.nav-menu{
+	div.nav-menu > div > ul{
 		flex-direction: row;
 		justify-content: flex-end;
+	}
+	div.nav-menu > div > ul > li{
+		padding: 0.5em;
 	}
 	/*header*/
 	.main-page-header{

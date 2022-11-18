@@ -26,7 +26,12 @@
 				<div class=hamburger>
 					<i class="fa-solid fa-bars"></i>
 				</div>
-				<ul class="nav-menu">
+				<div class='nav-menu'>
+					<?php wp_nav_menu( array(
+					'theme_location' => 'my-new-menu',
+					'container_class' => 'nav-menu' ) ); ?>
+				</div>
+				<!--<ul class="nav-menu">
 					<li class="nav-item">
 						<a href="/index.php/residential" class="nav-link">Residential</a>
 					</li>
@@ -42,7 +47,7 @@
 					<li class="nav-item">
 						<a href="/index.php/contact" class="nav-link">Contact</a>
 					</li>
-				</ul>
+				</ul>-->
 			</nav>
 		</section>
 	</header>
