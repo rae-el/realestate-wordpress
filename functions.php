@@ -43,6 +43,21 @@ add_action('admin_head', 'mynewfavicon');
 /*adds a favicon to my site*/
 add_action('wp_head', 'mynewfavicon');
 
+////////////////////////////////////////////////////////////////////////////////////////////
+// my menu //
+
+function my_new_menu() {
+    /*register_nav_menu('my-new-menu',__( 'My New Menu' ));*/
+	register_nav_menus( array(
+		'primary-menu'   => __( 'Primary Menu', 'my-menu' ),
+		'secondary-menu' => __( 'Secondary Menu', 'my-menu' )
+	) );
+}
+add_action( 'init', 'my_new_menu' );
+
+
+
+
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // api calls //
@@ -162,14 +177,5 @@ function featured_widget_widgets_init() {
 }
 add_action('widgets_init','featured_widget_widgets_init');
 */
-////////////////////////////////////////////////////////////////////////////////////////////
-// my menu //
-
-function my_new_menu() {
-    register_nav_menu('my-new-menu',__( 'My New Menu' ));
-}
-add_action( 'init', 'my_new_menu' );
-
-
 
   

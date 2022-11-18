@@ -26,11 +26,15 @@
 		<section class="site-navigation">
 			<h3>Site Navigation</h3>
             <a href="<?php echo home_url(); ?>">Home</a>
+			<?php wp_nav_menu( array(
+					'theme_location' => 'primary-menu',
+					'container_class' => 'nav-menu' ) ); ?>
+					<!--
             <a href="<?php echo home_url(); ?>/residential/">Residential Properties</a>
             <a href="<?php echo home_url(); ?>/commercial">Commercial Properties</a>
             <a href="<?php echo home_url(); ?>/resources">Resources</a>
 			<a href="<?php echo home_url(); ?>/about">About</a>
-			<a href="<?php echo home_url(); ?>/contact">Contact</a>
+			<a href="<?php echo home_url(); ?>/contact">Contact</a>-->
 		</section>
 	</section>
 </section>

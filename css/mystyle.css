@@ -121,7 +121,7 @@ form {
 div.nav-menu > div > ul{
 	display: none;
 }
-div.nav-menu.active > div > ul{
+section.menu-area > nav > div.nav-menu.active > div > ul{
 	display: flex;
 	flex-direction:column;
 	justify-content: center;
@@ -134,7 +134,7 @@ div.nav-menu.active > div > ul > li{
 	padding: 0.5%;
 	margin: 0.5%;
 }
-.menu a{
+section.menu-area > nav > div.nav-menu > div > ul > li > a{
 	text-decoration: none;
 	text-transform: uppercase;
 	font-size:1.2em;
@@ -192,7 +192,7 @@ div.nav-menu.active > div > ul > li{
 	padding-right: 1%;
 	color: #3D65AA;
 }
-.contact-section, .site-navigation{
+.contact-section, .site-navigation > div > ul{
 	display: flex;
 	flex-direction: column;
 	justify-content:center;
