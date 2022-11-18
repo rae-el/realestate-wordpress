@@ -75,8 +75,8 @@ function show(data){
 			tab += `<section class="property-box">
 		<img class="property-pic" src="${r.Property.Photo[0].HighResPath}" alt="property picture">
 		<section class="property-details">
-		<h4 class="property-address">${r.Property.Address.AddressText}</h4>
 		<h4 class="property-price">${r.Property.Price}</h4>
+		<p class="property-address">${r.Property.Address.AddressText}</p>
 		<section class="com-property-subdetails">
 			<i class="fa-solid fa-building"></i>
 			<p> ${r.Property.Type} </p>

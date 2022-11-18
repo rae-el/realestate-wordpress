@@ -14,7 +14,7 @@
 				<h1>Beach District Properties.</h1>
 			</section>
 			<section class="slogan-area">
-				<h2>Hi, I'm Brian White and I look forward to helping you find your next property.</h2>
+				<h3>Hi, I'm Brian White and I look forward to helping you find your next property.</h3>
 			</section>
 		</section>
 	</section>

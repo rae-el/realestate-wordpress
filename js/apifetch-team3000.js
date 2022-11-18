@@ -3,7 +3,7 @@
 // OrganizationId = 147734
 //this is the javascript to call for residential properties from my api
 
-var records = 6;
+var records = 12;
 var pageNum = 1;
 const url = 'https://realty-in-ca1.p.rapidapi.com/agents/get-listings?OrganizationId=147734&CurrentPage='+pageNum+'&RecordsPerPage='+records+'&SortOrder=D&SortBy=6&CultureId=1'
 const options = {

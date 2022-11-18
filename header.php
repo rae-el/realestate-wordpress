@@ -15,7 +15,7 @@
 		<section class="pre-header">
 			<nav>
 				<ul><li class="contact-info">
-					<a id="pre-header-name" href="/">BrianWhite.</a>
+					<a id="pre-header-name" href="<?php echo home_url(); ?>">BrianWhite.</a>
 					<a href="mailto:groupw@telus.net">groupw@telus.net</a>
 					<a href="tel:(604)961-4104">(604)961-4104</a>
 				</li></ul>

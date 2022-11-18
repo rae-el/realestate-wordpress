@@ -13,7 +13,7 @@
 		</section>
 	</section>
 	<section class="page-body">
-		<section class="page-content">
+		
 		<h2 class="page-title" id="top">
         		<?php
         		wp_title(false);
@@ -23,6 +23,7 @@
             <input id="mls-input" type="text" placeholder="search by mls number...">
             <button id="search-mls" type="submit">
         </form>-->
+		<section class="page-content">
 			<?php
 				$pageid = get_the_id();
 				$content_post = get_post($pageid);

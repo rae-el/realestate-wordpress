@@ -45,15 +45,16 @@ h1 {
 	color: #0E1722;
 }
 h2{
-	font-size: 1.5em;
+	font-family: encodeSemiBold;
+	font-size: 2em;
 	color: #0E1722;
 }
 h3{ 
-	font-size:1.2em;
+	font-size:1.5em;
 	color: #0E1722;
 }
 h4{
-	font-size: 1em;
+	font-size: 1.3em;
 }
 a{
 	text-decoration:none;
@@ -61,7 +62,9 @@ a{
 	color: #0E1722;
 }
 a:hover{
-	color:#3E454E;
+	color:#2e5486;
+	font-weight: bold;
+	transition: 0.7s ease;
 }
 p{
 	font-size: 1em;
@@ -97,7 +100,7 @@ form {
 	display: flex;
 	flex-direction: column;
 	justify-content:center;
-	align-items:flex-start;
+	align-items:center;
 }
 .contact-info a {
 	padding: 1% 1% 1% 3%;
@@ -133,19 +136,10 @@ div.nav-menu.active > div > ul > li{
 }
 .menu a{
 	text-decoration: none;
-	color: #424242;
 	text-transform: uppercase;
 	font-size:1.2em;
 	z-index: 5;
 	white-space: nowrap;
-}
-.menu a:hover{
-	color: #808080;
-	transition: 0.7s ease;
-}
-.menu a.active{
-	color: #808080;
-	transition: 0.7s ease;
 }
 .hamburger{
 	display: block;
@@ -198,7 +192,7 @@ div.nav-menu.active > div > ul > li{
 	padding-right: 1%;
 	color: #3D65AA;
 }
-.site-navigation{
+.contact-section, .site-navigation{
 	display: flex;
 	flex-direction: column;
 	justify-content:center;
@@ -222,7 +216,7 @@ div.nav-menu.active > div > ul > li{
 	clear:both;
 }
 .page-content{
-	width: 80%;
+	width: 100%;
 	margin: auto;
 }
 /*index end*/
@@ -398,5 +392,11 @@ button[value="on"]{
 	/* listings*/
 	.page-body #properties-area{
 		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+@media (min-width: 1300px){
+	/* listings*/
+	.page-body #properties-area{
+		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
 }
