@@ -7,10 +7,6 @@
 	wp_body_open();
 	?>
 	<section class="index-header">
-		<section class="index-title-area">
-			<h2 class="index-title">
-			</h2>
-		</section>
 	</section>
 	<section class="page-body">
 		
@@ -19,10 +15,6 @@
         		wp_title(false);
         		 ?>
         </h2>
-        <!--<form onsubmit="searchMLS()">
-            <input id="mls-input" type="text" placeholder="search by mls number...">
-            <button id="search-mls" type="submit">
-        </form>-->
 		<section class="page-content">
 			<?php
 				$pageid = get_the_id();
@@ -31,10 +23,8 @@
 				echo $content;
 				?>
 		</section>
-		<section id="properties-area">
+		<section id="form-area">
 		</section>
-	</section>
-	<section id="pagination">
 	</section>
 </body>
 
