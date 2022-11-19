@@ -5,15 +5,11 @@ document.addEventListener("DOMContentLoaded", function(){
 	const navMenu = document.querySelector(".nav-menu");
 	const navLink = document.querySelectorAll("body > header > section.menu-area > nav > div.nav-menu.active > div > ul > li > a");
 
+	//listen for click to open condensed menu
 	condensedMenu.addEventListener("click", openMenu);
-
-	console.log(hamburgerIcon);
-	console.log(xIcon);
 
 	//show listed menu
 	function openMenu(){
-		//here for testing, delete later
-		console.log("in openMenu");
 
 		//the menu
 		condensedMenu.classList.toggle("active");
@@ -22,8 +18,6 @@ document.addEventListener("DOMContentLoaded", function(){
 		hamburgerIcon.classList.toggle("hide");
 		xIcon.classList.toggle("hide");
 
-		console.log(hamburgerIcon);
-		console.log(xIcon);
 	}
 
 	
@@ -32,17 +26,11 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	//close menu
 	function closeMenu(){
-		//here for testing, delete later
-		console.log("in closeMenu");
-
 		//the menu
 		condensedMenu.classList.toggle("active");
 		navMenu.classList.toggle("active");
 		//the icon
 		hamburgerIcon.classList.toggle("hide");
 		xIcon.classList.toggle("hide");
-
-		console.log(hamburgerIcon);
-		console.log(xIcon);
 	}
 });

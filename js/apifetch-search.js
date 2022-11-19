@@ -2,11 +2,12 @@
 //really no clue why not working, not recognizing elements
 // mls = "R2730551"
 document.addEventListener("DOMContentLoaded", function(){
+	//here for testing delete later
+	console.log("everything loaded and search javascript function open")
 
 	//var mls = document.getElementById("mls-input").value;
 	var mls = "R2730551";
 	document.getElementById("mls-input").addEventListener("Submit",TrySearch);
-	
 
 	
 })

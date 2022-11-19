@@ -42,6 +42,9 @@ function my_theme_scripts() {
     //font-awesome
     wp_enqueue_script('font-awesome','https://kit.fontawesome.com/17aa4105b5.js');
 
+	//jquery
+	wp_enqueue_script('jquery','https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js');
+
 	//condensed menu
     wp_enqueue_script('menu', get_template_directory_uri() . '/js/getcondensedmenu.js');
 
@@ -91,9 +94,6 @@ function my_new_menu() {
 add_action( 'init', 'my_new_menu' );
 
 
-
-
-
 //////////////////////////////////////////////////////////////////////////////////////////
 // api calls //
 function get_api_call(){
@@ -131,7 +131,17 @@ function get_api_call(){
 }
 add_action('wp_head','get_api_call');
 
+//////////////////////////////////////////////////////////////////////////////////////////
 
+//property details
+//this means that when a property is clicked for more details if there is already one delete the current
+add_action('property_details', function(){
+	if(false !== get_transient('get_property')){
+		delete_transient('get_property');
+	}
+});
+
+//////////////////////////////////////////////////////////////////////////////////////////
 
 //if search page search for the featured mls number get javascript for api fetch mls
 //need to change so mls search always directs to the search page
