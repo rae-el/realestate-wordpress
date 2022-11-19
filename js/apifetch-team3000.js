@@ -43,7 +43,7 @@ function show(data){
 	let tab = "";
 	for (let r of data.Results){
 		try{
-		tab += `<section class="property-box"><a class="get-property-details" id=${r.MlsNumber}>
+		tab += `<section class="property-box"><a href="/wordpress/property" class="get-property-details" id=${r.MlsNumber}>
 		<img class="property-pic" src="${r.Property.Photo[0].HighResPath}" alt="property picture">
 		<section class="property-details">
 		<h4 class="property-price">${r.Property.Price}</h4>

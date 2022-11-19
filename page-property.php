@@ -13,12 +13,6 @@
 	<section class="index-header">
 	</section>
 	<section class="page-body">
-		<form>
-			<input id="mlsinput" type="text">
-			<input type="button" value="Details" onclick="GetDetails();">
-			<a class="test-btn">new</a>
-		</form>
-		
 		<h2 class="page-title" id="top">
         		<?php
         		wp_title(false);
