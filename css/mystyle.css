@@ -102,9 +102,6 @@ form {
 	justify-content:center;
 	align-items:center;
 }
-.contact-info a {
-	padding: 1% 1% 1% 3%;
-}
 #pre-header-name{
 	font-family: encodeSemiBold;
 }
@@ -116,7 +113,7 @@ form {
 	background-color: rgb(255,255,255,0);
 	background-image: url(../images/matt-wang-unsplash-top.png);
 	background-size:cover;
-	margin-top: 82px;
+	margin-top: 65px;
 }
 div.nav-menu > div > ul{
 	display: none;
@@ -145,6 +142,10 @@ section.menu-area > nav > div.nav-menu > div > ul > li > a{
 	display: block;
 	right: 0;
 	padding: 1%;
+	cursor: pointer;
+}
+.hamburger :hover{
+	color: #3E454E;
 }
 .hide{
 	display: none;
@@ -238,6 +239,9 @@ section.menu-area > nav > div.nav-menu > div > ul > li > a{
 		flex-direction: row;
 		justify-content:left;
 	}
+	.contact-info a {
+		padding: 0.5em 0.5em 0.5em 1em;
+	}
 	/* menu */
 	.menu-area{
 		margin-top: 35px;
@@ -245,7 +249,6 @@ section.menu-area > nav > div.nav-menu > div > ul > li > a{
 	.hamburger{
 		visibility: hidden;
 		height: 0;
-		cursor: pointer;
 	}
 	div.nav-menu > div > ul{
 		display: flex;
