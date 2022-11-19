@@ -14,12 +14,14 @@
 	</section>
 	<section class="page-body">
 		<h2 class="page-title" id="top">
+			<span id="mls-id"><?php print($get_property)?></span>
         		<?php
         		wp_title(false);
         		 ?>
-				 <?php print($get_property)?>
+				 Details
         </h2>
 		<section id="property-area">
+			
 		</section>
 	</section>
 </body>
