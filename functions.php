@@ -43,7 +43,7 @@ function my_theme_scripts() {
     wp_enqueue_script('font-awesome','https://kit.fontawesome.com/17aa4105b5.js');
 
 	//jquery
-	wp_enqueue_script('jquery','https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js');
+	wp_enqueue_script('jquery');
 
 	//condensed menu
     wp_enqueue_script('menu', get_template_directory_uri() . '/js/getcondensedmenu.js');
@@ -59,7 +59,7 @@ function my_theme_scripts() {
 		wp_enqueue_style( 'gridlistings', get_template_directory_uri() . '/css/gridlistingsstyle.css' );
 	  }
 	
-	//contact
+	//contact (id=83 personal or id=16 screencraft)
 	if (is_page('83')){
 		wp_enqueue_style( 'contact', get_template_directory_uri() . '/css/contactstyle.css' );
 	}
@@ -135,13 +135,79 @@ add_action('wp_head','get_api_call');
 
 //property details
 //this means that when a property is clicked for more details if there is already one delete the current
-add_action('property_details', function(){
+/*
+function refresh_transient_property(){
 	if(false !== get_transient('get_property')){
 		delete_transient('get_property');
 	}
-});
+}
+add_action('wp_foot','refresh_transient_property');
+*/
 
 //////////////////////////////////////////////////////////////////////////////////////////
+
+//ajax
+//Define AJAX URL
+function my_ajaxurl() {
+
+	echo '<script type="text/javascript">
+			var ajaxurl = "' . admin_url('admin-ajax.php') . '";
+		  </script>';
+ }
+ add_action('wp_head', 'my_ajaxurl');
+
+ //The Javascript that passes to PHP
+function javascript_to_php(){ ?>
+	<script>
+		jQuery(document).ready(function($) {
+			// This does the ajax request (The Call).
+			$( ".get-property-details" ).click(function() {
+				//get the button text
+				var variabledata = this.id;
+				// log the data pulled
+				console.log(variabledata);
+
+			$.ajax({
+				url: ajaxurl,
+				data: {
+					'action':'set_property_transient_ajax_request', // This is our PHP function below
+					'testdata' : variabledata // This is the variable we are sending via AJAX
+				},
+				success:function(data) {
+			// This outputs the result of the ajax request (The Callback)
+			console.log(data);
+					//puts the output in the button
+					$(".test-btn").text(data);
+				},
+				error: function(errorThrown){
+					window.alert(errorThrown);
+				}
+			});
+			});
+		});
+	</script>
+	<?php }
+add_action('wp_footer', 'javascript_to_php');
+
+//The PHP
+function set_property_transient_ajax_request() {
+    // The $_REQUEST contains all the data sent via AJAX from the Javascript call
+    if ( isset($_REQUEST) ) {
+		// get data from the javascript and assign to php variable
+        $testdata = $_REQUEST['testdata'];
+		delete_transient('get_property');
+        // set transient to the variable
+		set_transient('get_property',$testdata,HOUR_IN_SECONDS);
+		
+        // Now let's return the result to the Javascript function (The Callback)
+        echo $testdata;
+    }
+    // Always die in functions echoing AJAX content
+   die();
+}
+// This bit is a special action hook that works with the WordPress AJAX functionality.
+add_action( 'wp_ajax_set_property_transient_ajax_request', 'set_property_transient_ajax_request' );
+add_action( 'wp_ajax_nopriv_set_property_transient_ajax_request', 'set_property_transient_ajax_request' );
 
 //if search page search for the featured mls number get javascript for api fetch mls
 //need to change so mls search always directs to the search page

@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	//var mls = document.getElementById("mls-input").value;
 	var mls = "R2730551";
-	document.getElementById("mls-input").addEventListener("Submit",TrySearch);
+	//document.getElementById("mls-input").addEventListener("Submit",TrySearch);
 
 	
 })
