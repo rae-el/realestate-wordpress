@@ -159,7 +159,9 @@ function my_ajaxurl() {
  //The Javascript that passes to PHP
 function javascript_to_php(){ ?>
 	<script>
-		jQuery(document).ready(function($) {
+		///waits 5 seconds (async function to load) before running
+		setTimeout(() => {
+			jQuery(document).ready(function($) {
 			// This does the ajax request (The Call).
 			$( ".get-property-details" ).click(function() {
 				//get the button text
@@ -185,6 +187,7 @@ function javascript_to_php(){ ?>
 			});
 			});
 		});
+		}, 5000);
 	</script>
 	<?php }
 add_action('wp_footer', 'javascript_to_php');
