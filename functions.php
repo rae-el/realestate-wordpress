@@ -63,6 +63,11 @@ function my_theme_scripts() {
 	if (is_page('83')){
 		wp_enqueue_style( 'contact', get_template_directory_uri() . '/css/contactstyle.css' );
 	}
+	//properties (id=93 personal or id=? screencraft) 
+	if (is_page('93')){
+		wp_enqueue_style( 'details', get_template_directory_uri() . '/css/propertydetailsstyle.css' );
+
+	}
 
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_scripts' );

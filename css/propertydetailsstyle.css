@@ -1,0 +1,83 @@
+/*index start*/
+.page-title{
+	padding-bottom: 2%;
+	width: fit-content;
+}
+.page-body{
+	padding:3% 1% 1% 1%;
+	width: 80%;
+	display: flex;
+	flex-direction:column;
+	justify-content: center;
+	clear:both;
+	margin: auto;
+}
+.property-area{
+	width: 90%;
+	margin: auto;
+}
+/*listings start*/
+.property-pic{
+	align-self: center;
+	width: 80%;
+	height: auto;
+	font-size: 6em;
+	text-align: center;
+}
+.property-subdetails{
+	width: 70%;
+	display: flex;
+}
+.property-subdetails > p{
+	padding-left: 0.3em;
+	padding-right: 0.7em;
+}
+
+.property-blurb{
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+.property-table > tbody > tr > .category{
+	font-weight: bold;
+	width: fit-content;
+}
+td{
+	padding: 0.5em 1em 0.5em 0.5em;
+}
+.listing-details{
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-items: center;
+	align-items: center;
+}
+.realtor-pic{
+	clip-path: circle();
+	text-align: left;
+	width: 50%;
+}
+.agency-logo{
+	width: 50%;
+}
+/*media queries*/
+@media (min-width: 730px){
+	/* listing*/
+	.property-pic{
+		width: 50%;
+		height: auto;
+	}
+	.listing-details{
+		margin: auto;
+		display: inline-grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 2fr 1fr;
+		grid-auto-flow: column;
+		column-gap: 3em;
+	}
+	.agency-logo{
+		width: 100%;
+		height: auto;
+		align-self: center;
+	}
+	
+}
