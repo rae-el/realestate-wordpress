@@ -121,10 +121,10 @@ function get_api_call(){
 		<?php
 	}
 
-	//if the page is search (properties) (id=93 personal or id=? screencraft) get javascript for api fetch search
+	//if the page is search (properties) (id=93 personal or id=? screencraft) get javascript for api fetch
 	if (is_page('93')){
 		?>
-		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/apifetch-search.js">
+		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/apifetch-details.js">
 		</script>
 		<?php
 	}

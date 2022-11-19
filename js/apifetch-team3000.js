@@ -63,7 +63,7 @@ function show(data){
 		catch(e){
 			//if error try again replacing image with font awesome icon
 			try {
-				tab += `<section class="property-box">
+				tab += `<section class="property-box"><a href="/wordpress/property" class="get-property-details" id=${r.MlsNumber}>
 				<span class="property-pic"><i class="fa fa-home"></i></span>
 				<section class="property-details">
 				<h4 class="property-address">${r.Property.Address.AddressText}</h4>
@@ -77,6 +77,7 @@ function show(data){
 					<p>${r.Land.SizeTotal}</p>
 				</section>
 				</section>
+				</a>
 				</section>`;
 			}
 			catch(e){
