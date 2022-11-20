@@ -19,6 +19,7 @@
 		</section>
 	</section>
     <section class="page-body">
+	<?php if( dynamic_sidebar('search_properties_widget')) : else : endif; ?>
         <section id="properties-area">
         </section>
     </section>

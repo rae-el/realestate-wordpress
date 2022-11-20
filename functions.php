@@ -99,6 +99,24 @@ function my_new_menu() {
 add_action( 'init', 'my_new_menu' );
 
 
+/////////////////////////////////
+
+
+//register widgets
+function my_custom_widgets_widgets_init() {
+	//create search widget
+	register_sidebar( array(
+		'name'=> 'Search Properties Widget',
+		'id' => 'search_properties_widget',
+		'before_widget' => '<div class="search-properties-widget-area">',
+		'after_widget' => '</div>',
+		'before_title' => '',
+		'after_title' => '',
+	));
+}
+add_action('widgets_init','my_custom_widgets_widgets_init');
+
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // api calls //
 function get_api_call(){
@@ -157,8 +175,8 @@ function my_ajaxurl() {
  }
  add_action('wp_head', 'my_ajaxurl');
 
- //The Javascript that passes to PHP
-function javascript_to_php(){ ?>
+ //The Javascript that passes to PHP from the property link click
+function ajax_property_details(){ ?>
 	<script>
 		///waits 1 second (async function to load) before running
 		setTimeout(() => {
@@ -193,7 +211,47 @@ function javascript_to_php(){ ?>
 		}, 4000);
 	</script>
 	<?php }
-add_action('wp_footer', 'javascript_to_php');
+add_action('wp_footer', 'ajax_property_details');
+
+
+//The Javascript that passes to PHP from the search
+function ajax_search_property(){ ?>
+	<script>
+		///waits 1 second (async function to load) before running
+		setTimeout(() => {
+			jQuery(document).ready(function($) {
+			// This does the ajax request (The Call).
+			$( ".search-mls" ).click(function() {
+				//get the button text
+				var variabledata = this.input;
+				console.log("Collected property id");
+				// log the data pulled
+				console.log(variabledata);
+
+			$.ajax({
+				url: ajaxurl,
+				data: {
+					'action':'set_property_transient_ajax_request', // This is our PHP function below
+					'testdata' : variabledata // This is the variable we are sending via AJAX
+				},
+				success:function(data) {
+				// This outputs the result of the ajax request (The Callback)
+				console.log("Data returned from callback");
+				console.log(data);
+					//puts the output in the button
+					$(".test-btn").text(data);
+				},
+				error: function(errorThrown){
+					window.alert(errorThrown);
+				}
+			});
+			});
+		});
+		}, 4000);
+	</script>
+	<?php }
+add_action('wp_footer', 'ajax_search_property');
+
 
 //The PHP
 function set_property_transient_ajax_request() {
@@ -214,7 +272,6 @@ function set_property_transient_ajax_request() {
 			// set transient to the variable
 			set_transient('get_property',$testdata,MINUTE_IN_SECONDS);
 		}
-		
 		
 
 		//try with cookie
@@ -265,22 +322,7 @@ add_action('wp_head','get_agent_listings');
  */
 /////////////////////////////////
 //page generation
-/////////////////////////////////
 
 
-
-/*
-function featured_widget_widgets_init() {
-	register_sidebar( array(
-		'name'=> 'Featured Widget Area',
-		'id' => 'featured_widget_area',
-		'before_widget' => '<section class="inner-widget-area">',
-		'after_widget' => '</section>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	));
-}
-add_action('widgets_init','featured_widget_widgets_init');
-*/
 
   
