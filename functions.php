@@ -63,7 +63,7 @@ function my_theme_scripts() {
 	if (is_page('83')){
 		wp_enqueue_style( 'contact', get_template_directory_uri() . '/css/contactstyle.css' );
 	}
-	//properties (id=93 personal or id=? screencraft) 
+	//properties (id=93 personal or id=44 screencraft) 
 	if (is_page('93')){
 		wp_enqueue_style( 'details', get_template_directory_uri() . '/css/propertydetailsstyle.css' );
 
@@ -126,7 +126,7 @@ function get_api_call(){
 		<?php
 	}
 
-	//if the page is search (properties) (id=93 personal or id=? screencraft) get javascript for api fetch
+	//if the page is search (properties) (id=93 personal or id=44 screencraft) get javascript for api fetch
 	if (is_page('93')){
 		?>
 		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/apifetch-details.js">
@@ -138,16 +138,12 @@ add_action('wp_head','get_api_call');
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
-//property details
-//this means that when a property is clicked for more details if there is already one delete the current
-/*
-function refresh_transient_property(){
-	if(false !== get_transient('get_property')){
-		delete_transient('get_property');
+function session_init() {
+	if (!session_id()) {
+	session_start();
 	}
-}
-add_action('wp_foot','refresh_transient_property');
-*/
+	}
+	add_action( 'init', 'session_init' );
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -164,13 +160,14 @@ function my_ajaxurl() {
  //The Javascript that passes to PHP
 function javascript_to_php(){ ?>
 	<script>
-		///waits 5 seconds (async function to load) before running
+		///waits 1 second (async function to load) before running
 		setTimeout(() => {
 			jQuery(document).ready(function($) {
 			// This does the ajax request (The Call).
 			$( ".get-property-details" ).click(function() {
 				//get the button text
 				var variabledata = this.id;
+				console.log("Collected property id");
 				// log the data pulled
 				console.log(variabledata);
 
@@ -181,8 +178,9 @@ function javascript_to_php(){ ?>
 					'testdata' : variabledata // This is the variable we are sending via AJAX
 				},
 				success:function(data) {
-			// This outputs the result of the ajax request (The Callback)
-			console.log(data);
+				// This outputs the result of the ajax request (The Callback)
+				console.log("Data returned from callback");
+				console.log(data);
 					//puts the output in the button
 					$(".test-btn").text(data);
 				},
@@ -192,7 +190,7 @@ function javascript_to_php(){ ?>
 			});
 			});
 		});
-		}, 5000);
+		}, 4000);
 	</script>
 	<?php }
 add_action('wp_footer', 'javascript_to_php');
@@ -203,10 +201,31 @@ function set_property_transient_ajax_request() {
     if ( isset($_REQUEST) ) {
 		// get data from the javascript and assign to php variable
         $testdata = $_REQUEST['testdata'];
-		delete_transient('get_property');
-        // set transient to the variable
-		set_transient('get_property',$testdata,HOUR_IN_SECONDS);
+
+		//this seems to work ok to start but then appears to get "stuck" on a transient
+		//check if transient exists
+		if(false == get_transient('get_property')){
+			// set transient to the variable
+			set_transient('get_property',$testdata,MINUTE_IN_SECONDS);
+		}
+		else{
+			//if yes delete existing
+			delete_transient('get_property');
+			// set transient to the variable
+			set_transient('get_property',$testdata,MINUTE_IN_SECONDS);
+		}
 		
+		
+
+		//try with cookie
+		/*
+		if(isset($_COOKIE['get_property'])){
+			unset($_COOKIE['get_property']);
+			setcookie('get_property',$testdata,HOUR_IN_SECONDS,COOKIEPATH,COOKIE_DOMAIN);
+		}else{
+			setcookie('get_property',$testdata,HOUR_IN_SECONDS,COOKIEPATH,COOKIE_DOMAIN);
+		}*/
+
         // Now let's return the result to the Javascript function (The Callback)
         echo $testdata;
     }

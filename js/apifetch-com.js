@@ -72,7 +72,7 @@ function show(data){
 	var tab = "";
 	for (var r of data.Results){
 		try {
-			tab += `<section class="property-box"><a href="/wordpress/property" class="get-property-details" id=${r.MlsNumber}>
+			tab += `<section class="property-box"><a href="/wordpress/property/" class="get-property-details" id=${r.MlsNumber}>
 		<img class="property-pic" src="${r.Property.Photo[0].HighResPath}" alt="property picture">
 		<section class="property-details">
 		<h4 class="property-price">${r.Property.Price}</h4>
@@ -90,7 +90,7 @@ function show(data){
 		catch(e){
 			//if error try again replacing image with font awesome icon
 			try {
-				tab += `<section class="property-box"><a href="/wordpress/property" class="get-property-details" id=${r.MlsNumber}>
+				tab += `<section class="property-box"><a href="/wordpress/property/" class="get-property-details" id=${r.MlsNumber}>
 				<span class="property-pic"><i class="fa-solid fa-building"></i></span>
 				<section class="property-details">
 				<h4 class="property-address">${r.Property.Address.AddressText}</h4>

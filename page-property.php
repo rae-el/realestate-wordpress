@@ -9,6 +9,7 @@
 	
 	<?php 
 	$get_property = get_transient('get_property');
+	//$get_property = $_COOKIE['get_property']
 	?>
 	<section class="index-header">
 	</section>

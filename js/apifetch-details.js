@@ -94,9 +94,9 @@ document.addEventListener("DOMContentLoaded", function(){
 			</tbody>
 			</table>
 			<div class="listing-details">
-			<img class="realtor-pic" src="${r.Individual[0].PhotoHighRes}" alt="agent picture">
+			<img class="realtor-pic" src="${r.Individual[0].PhotoHighRes}" alt="Agent Picture">
 			<h3 class="realtor-name">${r.Individual[0].Name}</h3>
-			<img class="agency-logo" src="${r.Individual[0].Organization.Logo}" alt="agent picture">
+			<img class="agency-logo" src="${r.Individual[0].Organization.Logo}" alt="Agency Logo">
 			<p class="agency-name">${r.Individual[0].Organization.Name}</p>
 			</div>
 		
