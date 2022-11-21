@@ -150,7 +150,7 @@ section.menu-area > nav > div.nav-menu > div > ul > li > a{
 .hide{
 	display: none;
 }
-.nav-menu > .menu > .current_page_item > a{
+.nav-menu > .nav-menu > .menu > .current_page_item > a{
 	font-weight: bolder;
 }
 /*menu end*/
@@ -190,6 +190,7 @@ section.menu-area > nav > div.nav-menu > div > ul > li > a{
 	font-size: 1.5em;
 	margin-left: 0.25em;
 	padding-bottom: 0.02em;
+	color: #0E1722;
 }
 .search-bar-btn:hover{
 	color: #2e5486;
