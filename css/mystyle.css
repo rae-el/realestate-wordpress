@@ -283,10 +283,7 @@ section.menu-area > nav > div.nav-menu > div > ul > li > a{
 	div.nav-menu > div > ul > li{
 		padding: 0.5em;
 	}
-	/*search bar*/
-	.search-bar-input{
-		width: 20%;
-	}
+	
 	/*footer*/
 	.footer{
 		flex-direction: row;
@@ -294,4 +291,10 @@ section.menu-area > nav > div.nav-menu > div > ul > li > a{
 	.page-body{
 		width: 75%;
 	}
+}
+@media (min-width: 930px){
+/*search bar*/
+.search-bar-input{
+	width: 20%;
+}
 }
