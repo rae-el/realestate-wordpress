@@ -1,4 +1,7 @@
 <?php
+namespace realestatetheme;
+
+use WP_Widget;
 
 class My_Search_Widget extends WP_Widget {
 	public function __construct() {

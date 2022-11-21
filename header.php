@@ -32,23 +32,6 @@
 					'theme_location' => 'primary-menu',
 					'container_class' => 'nav-menu' ) ); ?>
 				</div>
-				<!--<ul class="nav-menu">
-					<li class="nav-item">
-						<a href="/index.php/residential" class="nav-link">Residential</a>
-					</li>
-					<li class="nav-item">
-						<a href="/index.php/commercial" class="nav-link">Commercial</a>
-					</li>
-					<li class="nav-item">
-						<a href="/index.php/resources" class="nav-link">Resources</a>
-					</li>
-					<li class="nav-item">
-						<a href="/index.php/about" class="nav-link">About</a>
-					</li>
-					<li class="nav-item">
-						<a href="/index.php/contact" class="nav-link">Contact</a>
-					</li>
-				</ul>-->
 			</nav>
 		</section>
 	</header>
