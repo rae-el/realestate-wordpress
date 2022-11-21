@@ -241,7 +241,7 @@ function ajax_search_property(){ ?>
 						console.log("Data returned from callback");
 						console.log(data);
 						//open property window with the number searched
-						window.open('wordpress/property/');
+						window.open('wordpress/property/','_self');
 						},
 						error: function(errorThrown){
 							window.alert(errorThrown);
