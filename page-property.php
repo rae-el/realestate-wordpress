@@ -21,8 +21,11 @@
         		 ?>
 				 Details
         </h2>
+		<form action="" class="search-bar-form">
+			<input type="text" class="search-bar-input" placeholder="search by mls number" name="searchbar">
+			<button type="submit" class="search-bar-btn"><i class="fas fa-search"></i></button>
+		</form>
 		<section id="property-area">
-			
 		</section>
 	</section>
 </body>

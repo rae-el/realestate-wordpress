@@ -24,7 +24,7 @@
 	<?php //if( dynamic_sidebar('search_properties_widget')) : else : endif; ?>
 	<section class="search-bar-area">
 		<form action="" class="search-bar-form">
-			<input type="text" class="search-bar-input" placeholder="search" name="searchbar">
+			<input type="text" class="search-bar-input" placeholder="search by mls number" name="searchbar">
 			<button type="submit" class="search-bar-btn"><i class="fas fa-search"></i></button>
 		</form>
 	</section>
