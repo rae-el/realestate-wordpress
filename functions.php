@@ -217,36 +217,42 @@ add_action('wp_footer', 'ajax_property_details');
 //The Javascript that passes to PHP from the search
 function ajax_search_property(){ ?>
 	<script>
-		///waits 1 second (async function to load) before running
-		setTimeout(() => {
-			jQuery(document).ready(function($) {
-			// This does the ajax request (The Call).
-			$( ".search-mls" ).click(function() {
-				//get the button text
-				var variabledata = this.input;
-				console.log("Collected property id");
-				// log the data pulled
-				console.log(variabledata);
-
-			$.ajax({
-				url: ajaxurl,
-				data: {
-					'action':'set_property_transient_ajax_request', // This is our PHP function below
-					'testdata' : variabledata // This is the variable we are sending via AJAX
-				},
-				success:function(data) {
-				// This outputs the result of the ajax request (The Callback)
-				console.log("Data returned from callback");
-				console.log(data);
-					//puts the output in the button
-					$(".test-btn").text(data);
-				},
-				error: function(errorThrown){
-					window.alert(errorThrown);
-				}
+		jQuery(document).ready(function($) {
+			///waits 4 seconds (async function to load) before running
+			setTimeout(() => {
+				// This does the ajax request (The Call).
+				document.addEventListener('submit',function(e){
+					e.preventDefault();
+					const searchForm = document.querySelector('.search-bar-form');
+					console.log(searchForm);
+					var searchInput = searchForm.searchbar.value;
+					console.log(searchInput);
+					if (searchInput && searchInput.trim().length > 0){
+						// exclude white space and to uppercase
+						searchInput = searchInput.trim().toUpperCase();
+						$.ajax({
+						url: ajaxurl,
+						data: {
+							'action':'set_property_transient_ajax_request', // This is our PHP function below
+							'testdata' : searchInput // This is the variable we are sending via AJAX
+						},
+						success:function(data) {
+						// This outputs the result of the ajax request (The Callback)
+						console.log("Data returned from callback");
+						console.log(data);
+						//open property window with the number searched
+						window.open('wordpress/property/');
+						},
+						error: function(errorThrown){
+							window.alert(errorThrown);
+						}
+					});
+						return console.log(searchInput);
+					} else {
+						return console.log("No results");
+					}
+				});
 			});
-			});
-		});
 		}, 4000);
 	</script>
 	<?php }
